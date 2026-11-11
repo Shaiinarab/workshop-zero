@@ -1,0 +1,81 @@
+{{template "layouts/base_top" .}}
+
+<nav class="crumbs"><a href="/">خانه</a> / برنامه</nav>
+
+<header style="max-width:60ch">
+  <h1>برنامه کارگاه</h1>
+  <p class="muted">
+    ۱۸۰ دقیقه، سه ایستگاه. هر ایستگاه یک خروجی مشخص دارد و در پایان، نقشه راه شخصی
+    هر شرکت‌کننده آماده است.
+  </p>
+</header>
+
+<section class="block tight">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-num">۰۱</span>
+      <h2>سه ایستگاه</h2>
+    </div>
+    <div class="grid three">
+      {{range $i, $s := .Stations}}
+      <article class="card hover">
+        <span class="tag accent">ایستگاه {{faNum (add $i 1)}}</span>
+        <div class="md-body" style="margin-top:.9rem">{{md $s.Body}}</div>
+      </article>
+      {{end}}
+    </div>
+  </div>
+</section>
+
+<section class="block tight alt">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-num">۰۲</span>
+      <h2>خط زمانی ۱۸۰ دقیقه</h2>
+      <p class="sub">بر پایه ساعت شروع ۹:۰۰ صبح؛ در اجرای واقعی با ساعت موسسه تنظیم می‌شود.</p>
+    </div>
+    <div class="card">
+      <div class="progress-wrap">
+        <div class="progress"><span style="width:{{pct .Agenda.Elapsed .Agenda.Total}}%"></span></div>
+        <span class="small muted">اکنون: دقیقه {{faNum .Agenda.Elapsed}} — {{.Agenda.Title}}</span>
+      </div>
+      <ol class="timeline">
+        {{range .Agenda.Items}}
+        <li>
+          <span class="t">{{faNum .Start}}–{{faNum .End}}</span>
+          <div><strong>{{.Title}}</strong><br><span class="muted small">{{.Note}}</span></div>
+        </li>
+        {{end}}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="block tight">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-num">۰۳</span>
+      <h2>چه چیزی لازم داری؟</h2>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3>با خودت بیاور</h3>
+        <ul class="ticks">
+          <li>لپ‌تاپ یا گوشی</li>
+          <li>یک مسئله واقعی از درس یا کار خودت</li>
+          <li>حساب کاربری رایگان در یک دستیار هوش مصنوعی</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>ما فراهم می‌کنیم</h3>
+        <ul class="ticks">
+          <li>نقشه راه شخصی چاپ‌شده</li>
+          <li>کتابخانه ابزارها و منابع</li>
+          <li>بازخورد مستقل روی دستاورد</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{template "layouts/base_bottom" .}}

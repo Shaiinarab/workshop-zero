@@ -1,0 +1,129 @@
+{{template "layouts/base_top" .}}
+
+<header class="hero">
+  <div class="container">
+    <span class="kicker"><span class="pulse"></span> پیشنهاد برنامه — نسخه ۱</span>
+    <h1>از کاربر به <em>صاحبخانه</em></h1>
+    <p class="lede">
+      یک برنامه سه‌ساعته برای دانشجویان موسسه آموزش عالی زند شیراز؛ با سه ایستگاه عملی،
+      هشت ماژول انتخابی و یک نقشه راه شخصی که دقیقاً از دلِ سلیقه و هدف تو ساخته می‌شود.
+      نه یک سخنرانی، نه یک فهرست ابزار — یک مسیر مشخص تا اولین دستاورد.
+    </p>
+    <div class="hero-cta">
+      <a class="btn accent" href="/quiz">نقشه راه خودت را بساز</a>
+      <a class="btn" href="/program">دیدن برنامه</a>
+    </div>
+    <div class="meta">
+      <span class="chip">مخاطب: دانشجویان کارشناسی</span>
+      <span class="chip">مدت: ۱۸۰ دقیقه</span>
+      <span class="chip">قالب: سه ایستگاه + نقشه راه</span>
+      <span class="chip">مکان: موسسه آموزش عالی زند، شیراز</span>
+    </div>
+  </div>
+</header>
+
+<section class="block">
+  <div class="container">
+    <div class="grid three">
+      <div class="card flat">
+        <div class="stat"><span class="n">{{faNum .Modules}}</span><span class="l">ماژول انتخابی</span></div>
+      </div>
+      <div class="card flat">
+        <div class="stat"><span class="n">{{faNum .Sessions}}</span><span class="l">نشست در یک نقشه راه</span></div>
+      </div>
+      <div class="card flat">
+        <div class="stat"><span class="n">{{faNum .Finished}}</span><span class="l">نقشه راه ساخته‌شده تا امروز</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block tight alt">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-num">۰۱</span>
+      <h2>سه ایستگاه، یک تجربه</h2>
+      <p class="sub">هر ایستگاه یک کار مشخص دارد؛ در پایان هر کدام چیزی در دست داری.</p>
+    </div>
+    <div class="grid three">
+      {{range $i, $s := .Stations}}
+      <article class="card hover">
+        <span class="tag accent">ایستگاه {{faNum (add $i 1)}}</span>
+        <div class="md-body" style="margin-top:.9rem">{{md $s.Body}}</div>
+      </article>
+      {{end}}
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-num">۰۲</span>
+      <h2>یک نقشه راه، کاملاً مدولار</h2>
+      <p class="sub">
+        به جای سه مسیر جدا، یک ساختار واحد داری: هسته مشترک، چهار ماژول انتخابی تو،
+        استودیوی پروژه و Demo Day. فقط وسطِ نقشه عوض می‌شود — شکل و انتها یکی است.
+      </p>
+    </div>
+    <div class="grid three">
+      {{range .Preview}}
+      <article class="card hover">
+        <div class="row between">
+          <span class="tag teal">{{.ID}}</span>
+          <span class="tiny muted">{{len .Sessions}} نشست</span>
+        </div>
+        <h3 style="margin-top:.7rem">{{.Title}}</h3>
+        <p class="muted small">{{.Tagline}}</p>
+        <p class="small">{{.Summary}}</p>
+      </article>
+      {{end}}
+    </div>
+    <div class="row" style="margin-top:1.6rem">
+      <a class="btn" href="/modules">دیدن همه ماژول‌ها</a>
+      <a class="btn ghost" href="/roadmap/">دیدن یک نقشه راه نمونه</a>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-num">۰۳</span>
+      <h2>چه چیزی با خودت می‌بری؟</h2>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3>دستاورد ملموس</h3>
+        <ul class="ticks">
+          <li>نقشه راه شخصی ۱۵ نشستی</li>
+          <li>یک نمونه کارا از مسئله خودت</li>
+          <li>کتابخانه منابع و ابزارها</li>
+          <li>چک‌لیست بررسی و اعتبارسنجی</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>توانایی</h3>
+        <ul class="ticks">
+          <li>تشخیص اینکه چه کاری را به چه ابزاری بسپاری</li>
+          <li>ساختن زمینه و خروجی ساختاریافته</li>
+          <li>بررسی و راستی‌آزمایی خروجی</li>
+          <li>ارائه دادن ایده در ۵ دقیقه</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container center">
+    <h2 style="max-width:24ch;margin-inline:auto">آماده‌ای ببینی نقشه راهت چه شکلی است؟</h2>
+    <p class="muted" style="max-width:52ch;margin:1rem auto 1.8rem">
+      ده سؤال کوتاه؛ بدون پیش‌نیاز فنی. در پایان چهار ماژول مناسب خودت را می‌گیری
+      و همان لحظه نقشه راه ساخته می‌شود.
+    </p>
+    <a class="btn accent" href="/quiz">شروع آزمون مسیر</a>
+  </div>
+</section>
+
+{{template "layouts/base_bottom" .}}

@@ -1,0 +1,10 @@
+<div class="card" id="agenda">
+  <div class="row between">
+    <h3 style="margin:0">ایستگاه فعلی</h3>
+    <span class="tag accent">{{faNum .Agenda.Remain}} دقیقه مانده</span>
+  </div>
+  <p style="margin:.6rem 0 .2rem"><strong>{{.Agenda.Title}}</strong></p>
+  <p class="muted small">{{.Agenda.Note}}</p>
+  <div class="progress" style="margin:.6rem 0"><span style="width:{{pct .Agenda.Elapsed .Agenda.Total}}%"></span></div>
+  <p class="tiny muted">دقیقه {{faNum .Agenda.Elapsed}} از {{faNum .Agenda.Total}}</p>
+</div>

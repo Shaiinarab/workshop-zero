@@ -1,0 +1,30 @@
+{{template "layouts/base_top" .}}
+
+<nav class="crumbs"><a href="/">خانه</a> / ابزارها</nav>
+
+<header style="max-width:62ch">
+  <h1>ابزارهایی که ارزش وقت گذاشتن دارند</h1>
+  <p class="muted">
+    فهرست کوتاه و به‌روز؛ همه با پلن رایگان قابل شروع. معیار انتخاب: چیزی که
+    یک دانشجو بتواند همان هفته اول روی درس یا پروژه‌اش استفاده کند.
+  </p>
+</header>
+
+<section class="block tight">
+  <div class="container">
+    <div class="grid two">
+      <div class="card">
+        <h2 style="font-size:1.3rem">ابزارها</h2>
+        <div class="md-body" style="margin-top:.8rem">{{md .Tools}}</div>
+      </div>
+      <div class="card">
+        <h2 style="font-size:1.3rem">پروژه‌های داغ این روزها</h2>
+        <p class="muted small">پروژه‌های محبوب در مخزن‌های عمومی — برای دیدن اینکه
+        دنیای امروز به کدام سمت می‌رود.</p>
+        <div class="md-body" style="margin-top:.6rem">{{md .Repos}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{template "layouts/base_bottom" .}}

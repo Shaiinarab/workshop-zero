@@ -1,0 +1,59 @@
+{{template "layouts/base_top" .}}
+
+<nav class="crumbs"><a href="/">خانه</a> / ماژول‌ها</nav>
+
+<header style="max-width:62ch">
+  <h1>هشت ماژول، یک نقشه راه</h1>
+  <p class="muted">
+    هر ماژول دو نشست دارد: یک نشست برای فهمیدن، یک نشست برای ساختن. در نقشه راه شخصی
+    چهار ماژول بر اساس آزمون مسیر انتخاب می‌شود — اما می‌توانی دستی هم انتخاب کنی.
+  </p>
+  <div class="row" style="margin-top:1.2rem">
+    <a class="btn" href="/quiz">پیشنهاد خودکار</a>
+    <a class="btn ghost" href="/roadmap/">دیدن نقشه راه نمونه</a>
+  </div>
+</header>
+
+<section class="block tight">
+  <div class="container">
+    <div class="grid two">
+      {{range $i, $m := .Modules}}
+      <article class="card hover reveal" id="{{$m.ID}}">
+        <div class="row between">
+          <span class="tag accent">{{$m.ID}}</span>
+          <span class="tiny muted">{{len $m.Sessions}} نشست</span>
+        </div>
+        <h3 style="margin-top:.75rem">{{$m.Title}}</h3>
+        <p class="muted small" style="margin-bottom:.6rem">{{$m.Tagline}}</p>
+        <p class="small">{{$m.Summary}}</p>
+
+        <h4 style="margin-top:1rem">چه یاد می‌گیری</h4>
+        <ul class="ticks">
+          {{range $m.Concepts}}<li>{{.}}</li>{{end}}
+        </ul>
+
+        <h4 style="margin-top:.9rem">با چه ابزارهایی</h4>
+        <div class="row wrap" style="margin-top:.4rem">
+          {{range $m.Tools}}<span class="tag">{{.}}</span>{{end}}
+        </div>
+
+        <h4 style="margin-top:.9rem">دو نشست</h4>
+        <ol class="timeline" style="margin-top:.3rem">
+          {{range $m.Sessions}}
+          <li>
+            <span class="t">{{.Title}}</span>
+            <div><span class="muted small">{{.Goal}}</span><br><span class="tiny">خروجی: {{.Artifact}}</span></div>
+          </li>
+          {{end}}
+        </ol>
+
+        <div class="row" style="margin-top:1rem">
+          <a class="btn ghost small" href="/roadmap/{{$m.ID}}">این ماژول در یک نقشه راه</a>
+        </div>
+      </article>
+      {{end}}
+    </div>
+  </div>
+</section>
+
+{{template "layouts/base_bottom" .}}

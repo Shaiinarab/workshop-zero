@@ -1,0 +1,57 @@
+{{template "layouts/base_top" .}}
+<nav class="crumbs"><a href="/">خانه</a> / نقشه راه</nav>
+
+<header class="row between wrap" style="align-items:flex-end">
+  <div style="max-width:60ch">
+    <h1>نقشه راه شخصی</h1>
+    <p class="muted">
+      یک ساختار واحد برای همه: کارگاه صفر، هسته مشترک، چهار ماژول انتخابی تو،
+      استودیوی پروژه و Demo Day. ترکیب زیر بر اساس انتخاب تو ساخته شده است.
+    </p>
+    <div class="row wrap" style="margin-top:.8rem">
+      {{range .Plan.Modules}}<a class="tag teal" href="/modules#{{.ID}}">{{.Title}}</a>{{end}}
+    </div>
+  </div>
+  <div class="row wrap">
+    <a class="btn ghost small" href="/modules">تغییر ماژول‌ها</a>
+    <a class="btn ghost small" href="/roadmap/{{.Sel}}/export.md">Markdown</a>
+    <a class="btn ghost small" href="/roadmap/{{.Sel}}/export.marp.md">اسلاید</a>
+  </div>
+</header>
+
+<section class="block tight">
+  <div class="container">
+    <div class="card flat" style="margin-bottom:1.2rem">
+      <div class="row between wrap">
+        <div class="row wrap">
+          {{range .Plan.Modules}}<span class="tag">{{.Title}}</span>{{end}}
+        </div>
+        <span class="tiny muted">شناسه: <span class="en">{{.Sel}}</span></span>
+      </div>
+    </div>
+
+    <div id="roadmap-progress" style="margin-bottom:1rem">
+      {{template "fragments/roadmap-progress.html" .}}
+    </div>
+
+    {{if .Static}}
+    <div class="plan">
+      {{range .Plan.Items}}
+      {{template "fragments/plan-item.html" (item $.Sel .)}}
+      {{end}}
+    </div>
+    {{else}}
+    <div id="sessions" class="plan" hx-sse:connect="/events?stream={{.Stream}}" hx-swap="beforeend">
+      <p id="sessions-hint" class="card skeleton">در حال چیدن نقشه راه…</p>
+    </div>
+    <noscript>
+      <div class="card">
+        <p>برای دیدن نقشه راه بدون جاوااسکریپت، نسخه متنی را بگیر:</p>
+        <a class="btn ghost small" href="/roadmap/{{.Sel}}/export.md">دانلود Markdown</a>
+      </div>
+    </noscript>
+    {{end}}
+  </div>
+</section>
+
+{{template "layouts/base_bottom" .}}

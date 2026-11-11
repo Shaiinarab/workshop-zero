@@ -1,0 +1,31 @@
+<article class="card hover plan-item-wrap" id="plan-{{.I.N}}">
+  <div class="plan-item kind-{{.I.Kind}}">
+    <span class="n">{{faNum .I.N}}</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">{{.I.Title}}</h3>
+        <span class="tag {{if eq .I.Kind "module"}}accent{{else if eq .I.Kind "core"}}teal{{end}}">{{if eq .I.Kind "module"}}ماژول{{else if eq .I.Kind "core"}}هسته مشترک{{else if eq .I.Kind "studio"}}استودیو{{else if eq .I.Kind "demo"}}پایان{{else}}شروع{{end}}</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">{{.I.Goal}}</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: {{.I.Artifact}}</p>
+      {{if .I.Tools}}
+      <div class="row wrap" style="margin-top:.5rem">{{range .I.Tools}}<span class="tag">{{.}}</span>{{end}}</div>
+      {{end}}
+      <div class="row" style="margin-top:.7rem">
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/{{.Sel}}/session/{{.I.N}}"
+                hx-target="#detail-{{.I.N}}" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/{{.Sel}}/done" method="post"
+              hx-action="/roadmap/{{.Sel}}/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="{{.I.N}}">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+      </div>
+      <div id="detail-{{.I.N}}" class="detail"></div>
+    </div>
+  </div>
+</article>

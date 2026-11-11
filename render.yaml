@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: workshop-zero
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: DATA_DIR
+        value: /data
+      - key: BASE_URL
+        sync: false
+      # Optional. When set, /live requires ?t=<token>.
+      - key: LIVE_TOKEN
+        sync: false
+      # AI roadmap forge (optional; without keys the deterministic template is used).
+      - key: ZEN_BASE_URL
+        sync: false
+      - key: ZEN_API_KEY
+        sync: false
+      - key: NIM_BASE_URL
+        sync: false
+      - key: NIM_API_KEY
+        sync: false
+      - key: ZHIPU_BASE_URL
+        sync: false
+      - key: ZHIPU_API_KEY
+        sync: false

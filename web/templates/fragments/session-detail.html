@@ -1,0 +1,10 @@
+<div class="card flat" style="margin-top:.8rem;background:var(--paper-2)">
+  <h4>هدف</h4>
+  <p class="small" style="margin:0">{{.I.Goal}}</p>
+  <h4 style="margin-top:.7rem">خروجی قابل ارائه</h4>
+  <p class="small" style="margin:0">{{.I.Artifact}}</p>
+  {{if .I.Tools}}
+  <h4 style="margin-top:.7rem">ابزارها</h4>
+  <div class="row wrap">{{range .I.Tools}}<span class="tag">{{.}}</span>{{end}}</div>
+  {{end}}
+</div>

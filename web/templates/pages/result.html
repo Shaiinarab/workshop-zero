@@ -1,0 +1,76 @@
+{{template "layouts/base_top" .}}
+<nav class="crumbs"><a href="/">خانه</a> / نتیجه</nav>
+
+<header style="max-width:60ch">
+  <span class="tag accent">نتیجه آزمون مسیر</span>
+  <h1 style="margin-top:.9rem">چهار ماژول پیشنهادی برای تو</h1>
+  <p class="muted">
+    این‌ها بیشترین هماهنگی را با پاسخ‌هایت داشتند. می‌توانی همین ترکیب را نگه داری
+    یا در صفحه ماژول‌ها دستی تغییر بدهی.
+  </p>
+</header>
+
+<section class="block tight">
+  <div class="container">
+    <div class="grid two">
+      {{range $i, $m := .Modules}}
+      <article class="card hover">
+        <div class="row between">
+          <span class="tag accent">ماژول {{faNum (add $i 1)}}</span>
+          <span class="tiny muted">{{$m.ID}}</span>
+        </div>
+        <h3 style="margin-top:.7rem">{{$m.Title}}</h3>
+        <p class="muted small">{{$m.Tagline}}</p>
+        <p class="small">{{$m.Summary}}</p>
+        <div class="row wrap" style="margin-top:.6rem">
+          {{range $m.Tools}}<span class="tag">{{.}}</span>{{end}}
+        </div>
+      </article>
+      {{end}}
+    </div>
+
+    <div class="card" style="margin-top:1.4rem">
+      <div class="row between wrap">
+        <div>
+          <h3>نقشه راه تو آماده است</h3>
+          <p class="muted small" style="margin:0">۱۵ نشست: کارگاه صفر، هسته مشترک، هشت نشست ماژول‌ها، استودیوی پروژه و Demo Day.</p>
+        </div>
+        <a class="btn accent" href="/roadmap/{{.Sel}}">دیدن نقشه راه</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block tight alt">
+  <div class="container">
+    <div class="grid two">
+      <div class="card">
+        <h3>اشتراک نتیجه</h3>
+        <div class="row" style="align-items:flex-start;margin-top:.8rem">
+          <img class="qr" src="/result/{{.ID}}/qr.png" width="140" height="140" alt="کد QR نتیجه">
+          <div class="grow">
+            <label class="muted small" for="share-url">لینک یکتا</label>
+            <input id="share-url" readonly value="{{.ShareURL}}" onclick="this.select()">
+            <img class="og" src="/result/{{.ID}}/og.svg" width="260" height="137" alt="کارت اشتراک نتیجه" style="margin-top:.7rem">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>قدم بعدی</h3>
+        <ul class="ticks">
+          <li>نقشه راه را دانلود کن (Markdown یا اسلاید)</li>
+          <li>ماژول‌ها را با آنچه در ترم می‌گذرانی مقایسه کن</li>
+          <li>اولین خروجی هر ماژول را این هفته بساز</li>
+        </ul>
+        <div class="row wrap" style="margin-top:1rem">
+          <a class="btn small" href="/roadmap/{{.Sel}}/export.md">دانلود Markdown</a>
+          <a class="btn ghost small" href="/roadmap/{{.Sel}}/export.marp.md">اسلاید</a>
+          <a class="btn ghost small" href="/modules">تغییر ماژول‌ها</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="container tiny muted">شناسه نتیجه: <span class="en">{{.ID}}</span></p>
+{{template "layouts/base_bottom" .}}

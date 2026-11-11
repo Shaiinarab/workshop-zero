@@ -1,0 +1,20 @@
+<article class="card q-card" data-quiz-form>
+  <div class="row between">
+    <span class="muted small">سؤال {{faNum .N}} از {{faNum .Total}}</span>
+    <a class="muted tiny" href="/quiz/{{.ID}}">شروع دوباره</a>
+  </div>
+  <h2 style="margin-top:.9rem">{{.Q.Text}}</h2>
+  <form action="/quiz/{{.ID}}/answer" method="post"
+        hx-action="/quiz/{{.ID}}/answer" hx-method="post"
+        hx-target="#quiz-area" hx-swap="innerHTML"
+        class="qopts">
+    <input type="hidden" name="n" value="{{.N}}">
+    {{range .Q.Options}}
+    <button type="submit" name="answer" value="{{.Key}}" data-answer="{{.Key}}">
+      <span class="key">{{.Key}}</span>
+      <span>{{.Text}}</span>
+    </button>
+    {{end}}
+  </form>
+  <noscript><p class="muted small">برای ادامه، فرم را با دکمه ارسال کن.</p></noscript>
+</article>

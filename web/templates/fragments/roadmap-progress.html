@@ -1,0 +1,6 @@
+<div class="progress-wrap">
+  <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="{{.Total}}" aria-valuenow="{{.DoneCnt}}">
+    <span style="width:{{pct .DoneCnt .Total}}%"></span>
+  </div>
+  <span class="muted small">{{faNum .DoneCnt}} از {{faNum .Total}} نشست انجام شد</span>
+</div>

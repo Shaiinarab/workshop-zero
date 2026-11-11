@@ -1,0 +1,13 @@
+{
+  "name": "workshop-zero",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "vendor": "node scripts/vendor-assets.mjs",
+    "check:htmx": "npx htmx.org@4.0.0 upgrade-check -- ./web/templates"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.0"
+  }
+}
