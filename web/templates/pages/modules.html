@@ -1,16 +1,17 @@
 {{template "layouts/base_top" .}}
 
-<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / ماژول‌ها</nav>
+<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / ماژول‌های یادگیری</nav>
 
 <header style="max-width:62ch">
-  <h1>هشت ماژول، یک نقشه راه</h1>
+  <h1>ماژول‌های یادگیری و مسیر شخصی</h1>
   <p class="muted">
-    هر ماژول دو نشست دارد: یک نشست برای فهمیدن، یک نشست برای ساختن. در نقشه راه شخصی
-    چهار ماژول بر اساس آزمون مسیر انتخاب می‌شود — اما می‌توانی دستی هم انتخاب کنی.
+    این کتابخانه هشت ماژول دو‌بخشی را برای ادامه یادگیری مستقل معرفی می‌کند.
+    سه مسیر رسمی برنامه در پروپوزال تعریف شده‌اند؛ این فهرست ابزار کمکی برای
+    ساخت یک نقشه راه خودآموز است، نه تقویم رسمی همه کارگاه‌ها.
   </p>
   <div class="row" style="margin-top:1.2rem">
-    <a class="btn" href="{{page . "quiz"}}">پیشنهاد خودکار</a>
-    <a class="btn ghost" href="{{page . "roadmap"}}">دیدن نقشه راه نمونه</a>
+    <a class="btn" href="{{page . "quiz"}}">پیشنهاد ماژول‌ها</a>
+    <a class="btn ghost" href="{{page . "proposal"}}">سه مسیر تخصصی</a>
   </div>
 </header>
 
@@ -21,7 +22,7 @@
       <article class="card hover reveal" id="{{$m.ID}}">
         <div class="row between">
           <span class="tag accent">{{$m.ID}}</span>
-          <span class="tiny muted">{{len $m.Sessions}} نشست</span>
+          <span class="tiny muted">{{len $m.Sessions}} نشست خودآموز</span>
         </div>
         <h3 style="margin-top:.75rem">{{$m.Title}}</h3>
         <p class="muted small" style="margin-bottom:.6rem">{{$m.Tagline}}</p>
@@ -32,12 +33,12 @@
           {{range $m.Concepts}}<li>{{.}}</li>{{end}}
         </ul>
 
-        <h4 style="margin-top:.9rem">با چه ابزارهایی</h4>
+        <h4 style="margin-top:.9rem">ابزارهای نمونه</h4>
         <div class="row wrap" style="margin-top:.4rem">
           {{range $m.Tools}}<span class="tag">{{.}}</span>{{end}}
         </div>
 
-        <h4 style="margin-top:.9rem">دو نشست</h4>
+        <h4 style="margin-top:.9rem">دو نشست پیشنهادی</h4>
         <ol class="timeline" style="margin-top:.3rem">
           {{range $m.Sessions}}
           <li>
@@ -48,7 +49,7 @@
         </ol>
 
         <div class="row" style="margin-top:1rem">
-          <a class="btn ghost small" href="{{page $ (print "roadmap/" $m.ID)}}">این ماژول در یک نقشه راه</a>
+          <a class="btn ghost small" href="{{page $ (print "roadmap/" $m.ID)}}">افزودن به نقشه راه نمونه</a>
         </div>
       </article>
       {{end}}
