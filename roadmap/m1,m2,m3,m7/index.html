@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111923">
+  <title>نقشه راه — کارگاه صفر</title>
+  <meta name="description" content="کارگاه صفر؛ آزمایشگاه کاربردی هوش مصنوعی برای دانشجویان موسسه آموزش عالی زند شیراز. از شناخت مدل‌ها تا ساخت نمونه‌های واقعی.">
+  <meta property="og:title" content="نقشه راه — کارگاه صفر">
+  <meta property="og:description" content="از کاربر هوش مصنوعی به سازنده؛ یک تجربه عملی، یک مسیر شخصی، یک خروجی واقعی.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111923'/%3E%3Cpath d='M8 16h16M16 8v16' stroke='%237DE0C3' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23F4A261' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preload" href="../../static/fonts/vazirmatn-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../static/css/app.css">
+  <script src="../../static/vendor/runtime/runtime.js"></script>
+  <script src="../../static/vendor/runtime/hx-sse.js"></script>
+  <script src="../../static/vendor/runtime/hx-preload.js"></script>
+  <script type="module" src="../../static/js/theme.js"></script>
+  <script type="module" src="../../static/js/quiz-keys.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">پرش به محتوا</a>
+<nav class="top" aria-label="ناوبری اصلی">
+  <a href="../../index.html" class="brand"><span class="dot"></span><span>کارگاه صفر</span><small>آزمایشگاه کاربردی هوش مصنوعی</small></a>
+  <a class="link" href="../../program/index.html">برنامه</a>
+  <a class="link" href="../../workshop/index.html">راهنمای کارگاه صفر</a>
+  <a class="link" href="../../modules/index.html">ماژول‌ها</a>
+  <a class="link" href="../../index.html#proposal">پروپوزال</a>
+  <a class="link" href="../../roadmap/index.html">نقشه راه</a>
+  <a class="link" href="../../tools/index.html">منابع</a>
+  <a class="link" href="../../faq/index.html">پرسش‌ها</a>
+  <span class="spacer"></span>
+  <span class="chip" id="counter" data-counter title="تعداد افرادی که مسیرشان را ساخته‌اند">…</span>
+  <button class="btn ghost small theme-toggle" data-toggle-theme type="button" aria-label="تغییر پوسته">◐</button>
+  <a class="btn accent small nav-cta" href="../../quiz/index.html">شروع</a>
+</nav>
+<main id="main">
+
+<nav class="crumbs"><a href="../../index.html">خانه</a> / نقشه راه</nav>
+
+<header class="row between wrap" style="align-items:flex-end">
+  <div style="max-width:60ch">
+    <h1>نقشه راه شخصی</h1>
+    <p class="muted">
+      یک ساختار واحد برای همه: کارگاه صفر، هسته مشترک، چهار ماژول انتخابی تو،
+      استودیوی پروژه و Demo Day. ترکیب زیر بر اساس انتخاب تو ساخته شده است.
+    </p>
+    <div class="row wrap" style="margin-top:.8rem">
+      <a class="tag teal" href="../../modules/index.html#m1">سواد AI و استفاده مسئولانه</a><a class="tag teal" href="../../modules/index.html#m2">پرامپت، زمینه و کار پژوهشی</a><a class="tag teal" href="../../modules/index.html#m3">طراحی بصری و تولید تصویر</a><a class="tag teal" href="../../modules/index.html#m7">LLM API و برنامه‌های هوشمند</a>
+    </div>
+  </div>
+  <div class="row wrap">
+    <a class="btn ghost small" href="../../modules/index.html">تغییر ماژول‌ها</a>
+    <a class="btn ghost small" href="../../roadmap/m1,m2,m3,m7/export.md">Markdown</a>
+    <a class="btn ghost small" href="../../roadmap/m1,m2,m3,m7/export.marp.md">اسلاید</a>
+  </div>
+</header>
+
+<section class="block tight">
+  <div class="container">
+    <div class="card flat" style="margin-bottom:1.2rem">
+      <div class="row between wrap">
+        <div class="row wrap">
+          <span class="tag">سواد AI و استفاده مسئولانه</span><span class="tag">پرامپت، زمینه و کار پژوهشی</span><span class="tag">طراحی بصری و تولید تصویر</span><span class="tag">LLM API و برنامه‌های هوشمند</span>
+        </div>
+        <span class="tiny muted">شناسه: <span class="en">m1,m2,m3,m7</span></span>
+      </div>
+    </div>
+
+    <div id="roadmap-progress" style="margin-bottom:1rem">
+      <div class="progress-wrap">
+  <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0">
+    <span style="width:0%"></span>
+  </div>
+  <span class="muted small">۰ از ۱۵ نشست انجام شد</span>
+</div>
+
+    </div>
+
+    
+    <div class="plan">
+      
+      <article class="card hover plan-item-wrap" id="plan-0">
+  <div class="plan-item kind-workshop">
+    <span class="n">۰</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">کارگاه صفر: مسیرتو پیدا کن</h3>
+        <span class="tag ">شروع</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">سه ایستگاه، آزمون مسیر و ساختن نقشه راه شخصی</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: نتیجه آزمون &#43; نقشه راه</p>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/0"
+                hx-target="#detail-0" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="0">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-0" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-1">
+  <div class="plan-item kind-core">
+    <span class="n">۱</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">زمینه مشترک: نقشه راه شخصی</h3>
+        <span class="tag teal">هسته مشترک</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">تعیین هدف، انتخاب ابزار و ساختن برنامه یادگیری</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: برنامه شخصی</p>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/1"
+                hx-target="#detail-1" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="1">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-1" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-2">
+  <div class="plan-item kind-core">
+    <span class="n">۲</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">زمینه مشترک: اعتبارسنجی و اتکای درست</h3>
+        <span class="tag teal">هسته مشترک</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">بررسی خروجی، کشف خطا و نوشتن قواعد استفاده</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: چک‌لیست بررسی</p>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/2"
+                hx-target="#detail-2" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="2">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-2" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-3">
+  <div class="plan-item kind-module">
+    <span class="n">۳</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">مدل‌های مولد چگونه کار می‌کنند</h3>
+        <span class="tag accent">ماژول</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">درک شهودی مدل، توکن، زمینه و تولید احتمالی</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: نقشه مفهومی AI</p>
+      
+      <div class="row wrap" style="margin-top:.5rem"><span class="tag">ChatGPT</span><span class="tag">Gemini</span><span class="tag">مدل‌های open-weight</span><span class="tag">چک‌لیست اعتبارسنجی</span></div>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/3"
+                hx-target="#detail-3" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="3">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-3" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-4">
+  <div class="plan-item kind-module">
+    <span class="n">۴</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">خطا، حریم خصوصی و اعتبار</h3>
+        <span class="tag accent">ماژول</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">تشخیص توهم، سوگیری و ریسک‌های داده</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: چک‌لیست استفاده مسئولانه</p>
+      
+      <div class="row wrap" style="margin-top:.5rem"><span class="tag">ChatGPT</span><span class="tag">Gemini</span><span class="tag">مدل‌های open-weight</span><span class="tag">چک‌لیست اعتبارسنجی</span></div>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/4"
+                hx-target="#detail-4" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="4">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-4" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-5">
+  <div class="plan-item kind-module">
+    <span class="n">۵</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">طراحی پرامپت و معیار موفقیت</h3>
+        <span class="tag accent">ماژول</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">تعریف نقش، زمینه، محدودیت و قالب خروجی</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: کتابخانه پرامپت شخصی</p>
+      
+      <div class="row wrap" style="margin-top:.5rem"><span class="tag">دستیارهای زبانی</span><span class="tag">Zotero</span><span class="tag">Semantic Scholar</span><span class="tag">OpenAlex</span></div>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/5"
+                hx-target="#detail-5" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="5">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-5" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-6">
+  <div class="plan-item kind-module">
+    <span class="n">۶</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">AI در مطالعه و پژوهش</h3>
+        <span class="tag accent">ماژول</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">ساخت query، استخراج ادعا و بررسی منبع</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: ماتریس مقایسه منابع</p>
+      
+      <div class="row wrap" style="margin-top:.5rem"><span class="tag">دستیارهای زبانی</span><span class="tag">Zotero</span><span class="tag">Semantic Scholar</span><span class="tag">OpenAlex</span></div>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/6"
+                hx-target="#detail-6" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="6">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-6" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-7">
+  <div class="plan-item kind-module">
+    <span class="n">۷</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">طراحی گرافیک دیجیتال</h3>
+        <span class="tag accent">ماژول</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">ساخت بریف، ترکیب‌بندی و طراحی یک خروجی</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: پوستر قابل ویرایش</p>
+      
+      <div class="row wrap" style="margin-top:.5rem"><span class="tag">Photopea</span><span class="tag">GIMP</span><span class="tag">Krita</span><span class="tag">Penpot</span><span class="tag">ComfyUI</span></div>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/7"
+                hx-target="#detail-7" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="7">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-7" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-8">
+  <div class="plan-item kind-module">
+    <span class="n">۸</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">تولید و ویرایش تصویر با AI</h3>
+        <span class="tag accent">ماژول</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">تولید، انتخاب، اصلاح و هماهنگ‌سازی تصاویر</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: مجموعه سه تصویر هم‌سبک</p>
+      
+      <div class="row wrap" style="margin-top:.5rem"><span class="tag">Photopea</span><span class="tag">GIMP</span><span class="tag">Krita</span><span class="tag">Penpot</span><span class="tag">ComfyUI</span></div>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/8"
+                hx-target="#detail-8" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="8">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-8" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-9">
+  <div class="plan-item kind-module">
+    <span class="n">۹</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">اولین درخواست مدل</h3>
+        <span class="tag accent">ماژول</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">ارسال درخواست و دریافت پاسخ از یک API</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: اسکریپت API قابل اجرا</p>
+      
+      <div class="row wrap" style="margin-top:.5rem"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">FastAPI</span><span class="tag">OpenAI-compatible APIs</span></div>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/9"
+                hx-target="#detail-9" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="9">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-9" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-10">
+  <div class="plan-item kind-module">
+    <span class="n">۱۰</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">ساخت اپلیکیشن کوچک</h3>
+        <span class="tag accent">ماژول</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">ساخت رابط ساده و اعتبارسنجی خروجی JSON</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: اپلیکیشن کوچک LLM</p>
+      
+      <div class="row wrap" style="margin-top:.5rem"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">FastAPI</span><span class="tag">OpenAI-compatible APIs</span></div>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/10"
+                hx-target="#detail-10" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="10">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-10" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-11">
+  <div class="plan-item kind-studio">
+    <span class="n">۱۱</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">استودیوی پروژه ۱: تعریف مسئله</h3>
+        <span class="tag ">استودیو</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">انتخاب مسئله، ابزار و معیار موفقیت</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: پروپوزال پروژه</p>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/11"
+                hx-target="#detail-11" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="11">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-11" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-12">
+  <div class="plan-item kind-studio">
+    <span class="n">۱۲</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">استودیوی پروژه ۲: ساخت و تکرار</h3>
+        <span class="tag ">استودیو</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">ساخت نسخه اول و بهبود بر اساس بازخورد</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: نمونه کارا</p>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/12"
+                hx-target="#detail-12" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="12">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-12" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-13">
+  <div class="plan-item kind-studio">
+    <span class="n">۱۳</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">استودیوی پروژه ۳: بازخورد و آماده‌سازی</h3>
+        <span class="tag ">استودیو</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">دریافت بازخورد، آماده‌سازی ارائه</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: نسخه نهایی</p>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/13"
+                hx-target="#detail-13" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="13">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-13" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+      <article class="card hover plan-item-wrap" id="plan-14">
+  <div class="plan-item kind-demo">
+    <span class="n">۱۴</span>
+    <div>
+      <div class="row between wrap">
+        <h3 style="margin:0">Demo Day</h3>
+        <span class="tag ">پایان</span>
+      </div>
+      <p class="muted small" style="margin:.4rem 0 0">ارائه دستاوردها و جمع‌بندی</p>
+      <p class="tiny" style="margin:.3rem 0 0">خروجی: ارائه نهایی</p>
+      
+      <div class="row" style="margin-top:.7rem">
+        
+        <button class="btn ghost small" type="button"
+                hx-get="/roadmap/m1,m2,m3,m7/session/14"
+                hx-target="#detail-14" hx-swap="innerHTML"
+                aria-expanded="false">جزئیات</button>
+        <form action="/roadmap/m1,m2,m3,m7/done" method="post"
+              hx-action="/roadmap/m1,m2,m3,m7/done" hx-method="post"
+              hx-target="#roadmap-progress" hx-swap="innerMorph"
+              hx-trigger="change" class="inline">
+          <input type="hidden" name="n" value="14">
+          <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
+          <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
+        </form>
+        
+      </div>
+      <div id="detail-14" class="detail"></div>
+    </div>
+  </div>
+</article>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+</main>
+<footer class="site">
+  <div class="container footer-inner">
+    <div><strong>کارگاه صفر</strong><span>از شناخت تا ساخت · موسسه آموزش عالی زند شیراز</span></div>
+    <div class="row wrap">
+      <a href="../../program/index.html">برنامه</a>
+      <a href="../../workshop/index.html">راهنمای کارگاه صفر</a>
+      <a href="../../modules/index.html">ماژول‌ها</a>
+      <a href="../../index.html#proposal">پروپوزال</a>
+      <a href="../../tools/index.html">منابع</a>
+      <a href="../../faq/index.html">پرسش‌ها</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
