@@ -162,6 +162,7 @@ func (s *Server) handleCover(w http.ResponseWriter, r *http.Request) {
 		"Modules":  len(lib),
 		"Sessions": len(s.lib.Compose(s.lib.ParseSelection("")).Items),
 		"Stations": markdownDir("stations"),
+		"Proposal": markdownFile("proposal/proposal.md"),
 		"Preview":  picked,
 		"Finished": len(s.store.Leaderboard(0)),
 	})
