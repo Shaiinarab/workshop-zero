@@ -62,6 +62,7 @@ func Freeze(out string) error {
 		{"/", "index.html"},
 		{"/program", "program/index.html"},
 		{"/modules", "modules/index.html"},
+		{"/proposal", "proposal/index.html"},
 		{"/tools", "tools/index.html"},
 		{"/faq", "faq/index.html"},
 		{"/result/" + demo.ID, "result/index.html"},
@@ -130,7 +131,7 @@ func Freeze(out string) error {
 	}
 
 	// GitHub Pages runs Jekyll by default, which ignores underscore-prefixed paths
-// and can fail the build for a plain static export. This marker opts out.
+	// and can fail the build for a plain static export. This marker opts out.
 	if err := os.WriteFile(filepath.Join(out, ".nojekyll"), nil, 0o644); err != nil {
 		return err
 	}

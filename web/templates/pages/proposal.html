@@ -1,0 +1,31 @@
+{{template "layouts/base_top" .}}
+
+<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / پیشنهاد برنامه</nav>
+
+<header style="max-width:60ch">
+  <h1>پیشنهاد برنامه آموزشی — کارگاه صفر</h1>
+  <p class="muted">
+    سند پیشنهادی برای استاد و مدیریت موسسه آموزش عالی زند شیراز؛ شامل هدف، ساختار،
+    ایستگاه‌ها، ماژول‌ها، ارزیابی، لجستیک و مراحل اجرا. برای بررسی و تایید.
+  </p>
+</header>
+
+<section class="block tight">
+  <div class="container narrow">
+    <article class="card">
+      <div class="md-body">{{md .Body}}</div>
+    </article>
+  </div>
+</section>
+
+<section class="block center">
+  <div class="container">
+    <p class="muted">آماده‌ای مسیر شخصی خودت را ببینی؟</p>
+    <div class="row" style="justify-content:center;margin-top:1rem">
+      <a class="btn accent" href="{{page . "quiz"}}">شروع آزمون مسیر</a>
+      <a class="btn ghost" href="{{page . "program"}}">دیدن برنامه</a>
+    </div>
+  </div>
+</section>
+
+{{template "layouts/base_bottom" .}}

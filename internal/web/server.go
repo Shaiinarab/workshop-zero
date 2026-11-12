@@ -78,6 +78,7 @@ func (s *Server) Routes() http.Handler {
 
 	mux.HandleFunc("GET /program", s.handleProgram)
 	mux.HandleFunc("GET /modules", s.handleModules)
+	mux.HandleFunc("GET /proposal", s.handleProposal)
 	mux.HandleFunc("GET /tools", s.handleTools)
 	mux.HandleFunc("GET /faq", s.handleFAQ)
 
@@ -188,6 +189,13 @@ func (s *Server) handleModules(w http.ResponseWriter, r *http.Request) {
 
 func (s *Server) handleFAQ(w http.ResponseWriter, r *http.Request) {
 	s.page(w, "pages/faq.html", "پرسش‌های متداول", nil)
+}
+
+// handleProposal renders the teacher-facing program proposal (content/proposal).
+func (s *Server) handleProposal(w http.ResponseWriter, r *http.Request) {
+	s.page(w, "pages/proposal.html", "پیشنهاد برنامه", map[string]any{
+		"Body": markdownFile("proposal/proposal.md"),
+	})
 }
 
 // ------------------------------------------------------------------ quiz
