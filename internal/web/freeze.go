@@ -61,6 +61,7 @@ func Freeze(out string) error {
 	pages := []struct{ route, file string }{
 		{"/", "index.html"},
 		{"/program", "program/index.html"},
+		{"/workshop", "workshop/index.html"},
 		{"/modules", "modules/index.html"},
 		{"/proposal", "proposal/index.html"},
 		{"/tools", "tools/index.html"},

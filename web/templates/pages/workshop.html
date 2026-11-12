@@ -1,0 +1,30 @@
+{{template "layouts/base_top" .}}
+
+<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / <a href="{{page . "program"}}">جلسه آشنایی</a> / راهنمای کامل</nav>
+
+<header style="max-width:70ch">
+  <h1>راهنمای اجرای کارگاه صفر عمومی</h1>
+  <p class="muted">سند اجرایی مدرس و دستیار: روایت آموزشی، اهداف یادگیری، برنامه دقیقه‌به‌دقیقه، تمرین‌ها، نقش‌های تیمی، سنجش و منابع پژوهشی.</p>
+  <div class="row wrap" style="margin-top:1rem">
+    <a class="btn accent" href="{{page . "program"}}">نمای زمان‌بندی در سایت</a>
+    <a class="btn ghost" href="{{page . "proposal"}}">پروپوزال دانشگاهی</a>
+  </div>
+</header>
+
+<section class="block tight">
+  <div class="container narrow">
+    <article class="card md-body workshop-document">{{md .Guide}}</article>
+  </div>
+</section>
+
+<section class="block center alt">
+  <div class="container">
+    <p class="muted">راهنما یک سند اجرایی قابل اصلاح است؛ پس از هر پایلوت باید با شواهد و بازخورد واقعی به‌روزرسانی شود.</p>
+    <div class="row wrap" style="justify-content:center;margin-top:1rem">
+      <a class="btn accent" href="{{page . "program"}}">بازگشت به برنامه کارگاه</a>
+      <a class="btn ghost" href="{{page . "tools"}}">راهنمای اکوسیستم ابزارها</a>
+    </div>
+  </div>
+</section>
+
+{{template "layouts/base_bottom" .}}
