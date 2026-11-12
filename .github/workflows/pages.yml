@@ -12,23 +12,25 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version: '1.27'
           cache: true
+          cache-dependency-path: go.sum
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '24'
           cache: npm
+          cache-dependency-path: package-lock.json
 
       - name: Install node deps
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
 
       - name: TypeScript
-        run: npx tsc -p tsconfig.json
+        run: npm run build
 
       - name: Go build and test
         run: |
@@ -37,7 +39,7 @@ jobs:
           go test ./...
 
       - name: htmx upgrade check
-        run: npx --yes htmx.org@4.0.0 upgrade-check -- ./web/templates
+        run: npm run check:htmx
 
       - name: Freeze static snapshot
         run: go run ./cmd/server freeze dist
@@ -59,7 +61,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -q -b gh-pages
           git add -A
-          git commit -q -m "deploy: $(git rev-parse --short HEAD)"
+          git commit -q -m "deploy: ${{ github.sha }}"
           git push -q --force https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
