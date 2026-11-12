@@ -1,20 +1,36 @@
 {{template "layouts/base_top" .}}
 
-<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / برنامه</nav>
+<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / جلسه آشنایی</nav>
 
-<header style="max-width:60ch">
-  <h1>برنامه کارگاه</h1>
+<header style="max-width:62ch">
+  <h1>کارگاه صفر: جلسه آشنایی و کشف مسیر</h1>
   <p class="muted">
-    ۱۸۰ دقیقه، سه ایستگاه. هر ایستگاه یک خروجی مشخص دارد و در پایان، نقشه راه شخصی
-    هر شرکت‌کننده آماده است.
+    این جلسه ۱۸۰ دقیقه‌ای نقطه ورود مشترک برنامه است؛ معرفی مسیرها، تمرین کوتاه،
+    شناخت نیاز دانشجو و آشنایی با روش یادگیری پروژه‌محور. این جلسه به‌تنهایی
+    جایگزین کارگاه‌های تخصصی و پروژه نهایی نیست.
   </p>
 </header>
+
+<section class="block tight alt">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-num">۰۰</span>
+      <h2>روایت جلسه: از شگفتی تا عاملیت</h2>
+      <p class="sub">این جلسه یک تور ابزار نیست؛ تجربه‌ای اکتشافی است که دانشجو را از تماشاگر به سازنده تبدیل می‌کند.</p>
+    </div>
+    <div class="grid three">
+      <article class="card"><span class="tag accent">۱ · کنجکاوی</span><h3>یک مسئله واقعی</h3><p class="muted">با یک چالش ملموس شروع می‌کنیم، نه با انبوه اصطلاحات و تاریخچه.</p></article>
+      <article class="card"><span class="tag accent">۲ · کشف</span><h3>دیدن پشت صحنه</h3><p class="muted">تفاوت مدل، داده، ابزار و workflow را می‌فهمیم.</p></article>
+      <article class="card"><span class="tag accent">۳ · ساختن</span><h3>آزمایش و تکرار</h3><p class="muted">با مسئله‌ای انتخابی کار می‌کنیم، خروجی می‌سازیم و آن را نقد و اصلاح می‌کنیم.</p></article>
+    </div>
+  </div>
+</section>
 
 <section class="block tight">
   <div class="container">
     <div class="sec-head">
       <span class="sec-num">۰۱</span>
-      <h2>سه ایستگاه</h2>
+      <h2>سه ایستگاه آشنایی</h2>
     </div>
     <div class="grid three">
       {{range $i, $s := .Stations}}
@@ -32,7 +48,7 @@
     <div class="sec-head">
       <span class="sec-num">۰۲</span>
       <h2>خط زمانی ۱۸۰ دقیقه</h2>
-      <p class="sub">بر پایه ساعت شروع ۹:۰۰ صبح؛ در اجرای واقعی با ساعت موسسه تنظیم می‌شود.</p>
+      <p class="sub">زمان‌بندی نمونه برای جلسه آغازین؛ با ساعت و امکانات کلاس تنظیم می‌شود.</p>
     </div>
     <div class="card">
       <div class="progress-wrap">
@@ -55,25 +71,13 @@
   <div class="container">
     <div class="sec-head">
       <span class="sec-num">۰۳</span>
-      <h2>چه چیزی لازم داری؟</h2>
+      <h2>چرا این روش یادگیری جواب می‌دهد؟</h2>
+      <p class="sub">تمرکز بر تجربه موفقیت کوچک، انتخاب شخصی، تمرین هدایت‌شده و بازتاب؛ نه حفظ کردن نام ابزارها.</p>
     </div>
-    <div class="grid two">
-      <div class="card">
-        <h3>با خودت بیاور</h3>
-        <ul class="ticks">
-          <li>لپ‌تاپ یا گوشی</li>
-          <li>یک مسئله واقعی از درس یا کار خودت</li>
-          <li>حساب کاربری رایگان در یک دستیار هوش مصنوعی</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>ما فراهم می‌کنیم</h3>
-        <ul class="ticks">
-          <li>نقشه راه شخصی چاپ‌شده</li>
-          <li>کتابخانه ابزارها و منابع</li>
-          <li>بازخورد مستقل روی دستاورد</li>
-        </ul>
-      </div>
+    <div class="grid three">
+      <article class="card"><h3>خودکارآمدی</h3><p class="muted">یک خروجی کوچک و قابل مشاهده در شروع، حس «می‌توانم یاد بگیرم» را به تجربه تبدیل می‌کند.</p></article>
+      <article class="card"><h3>امنیت روانی</h3><p class="muted">خطا بخشی از آزمایش است. دانشجو می‌تواند سؤال بپرسد، اشتباه کند و خروجی مدل را به چالش بکشد.</p></article>
+      <article class="card"><h3>عاملیت و بازتاب</h3><p class="muted">دانشجو هدف و معیار را تعیین می‌کند، خروجی را می‌سنجد و تصمیم می‌گیرد چه چیزی باید تغییر کند.</p></article>
     </div>
   </div>
 </section>
