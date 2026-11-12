@@ -607,8 +607,7 @@ func (s *Server) handleLive(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-// agendaState drives the 180-minute rotation. It is derived from the wall clock
-// so every screen agrees without a server-side timer.
+// agendaState is the canonical minute-by-minute agenda for the public workshop page.
 func agendaState() map[string]any {
 	type item struct {
 		Start int
