@@ -31,8 +31,12 @@ func NewRenderer() (*Renderer, error) {
 		"badge": layerClass,
 		"join":  func(parts []string, sep string) string { return strings.Join(parts, sep) },
 		"md":    mdLite,
-		"item": func(sel string, it plan.Item) map[string]any {
-			return map[string]any{"Sel": sel, "I": it}
+		"asset": assetURL,
+		"page":  pageURL,
+		"raw":   rawURL,
+		"item": func(data any, sel string, it plan.Item) map[string]any {
+			m, _ := data.(map[string]any)
+			return map[string]any{"Sel": sel, "I": it, "Static": m["Static"], "Root": m["Root"]}
 		},
 	}
 	t := template.New("").Funcs(funcs)
@@ -86,6 +90,52 @@ func (r *Renderer) RenderString(name string, data any) (string, error) {
 		return "", err
 	}
 	return buf.String(), nil
+}
+
+// assetURL points at a file under /static. In server mode it is root-absolute;
+// in the frozen build it is relative to the current document, so the same
+// templates work at a domain root and under a project subpath such as
+// /workshop-zero/.
+func assetURL(data any, p string) string {
+	root := rootOf(data)
+	if root == "" {
+		return "/" + p
+	}
+	return root + p
+}
+
+// pageURL points at a route. The server owns routes directly; the frozen build
+// resolves them to their directory index.
+func pageURL(data any, p string) string {
+	root := rootOf(data)
+	p = strings.Trim(p, "/")
+	if root == "" {
+		return "/" + p
+	}
+	if p == "" {
+		return root + "index.html"
+	}
+	return root + p + "/index.html"
+}
+
+// rawURL points at a route that is itself a file (Markdown/JSON exports), so no
+// "/index.html" suffix is appended.
+func rawURL(data any, p string) string {
+	root := rootOf(data)
+	p = strings.Trim(p, "/")
+	if root == "" {
+		return "/" + p
+	}
+	return root + p
+}
+
+func rootOf(data any) string {
+	m, ok := data.(map[string]any)
+	if !ok {
+		return ""
+	}
+	s, _ := m["Root"].(string)
+	return s
 }
 
 func faNum(n int) string {

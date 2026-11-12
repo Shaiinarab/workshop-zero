@@ -1,7 +1,7 @@
 <article class="card q-card" data-quiz-form>
   <div class="row between">
     <span class="muted small">سؤال {{faNum .N}} از {{faNum .Total}}</span>
-    <a class="muted tiny" href="/quiz/{{.ID}}">شروع دوباره</a>
+    <a class="muted tiny" href="{{page . (print "quiz/" .ID)}}">شروع دوباره</a>
   </div>
   <h2 style="margin-top:.9rem">{{.Q.Text}}</h2>
   <form action="/quiz/{{.ID}}/answer" method="post"

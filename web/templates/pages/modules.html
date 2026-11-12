@@ -1,6 +1,6 @@
 {{template "layouts/base_top" .}}
 
-<nav class="crumbs"><a href="/">خانه</a> / ماژول‌ها</nav>
+<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / ماژول‌ها</nav>
 
 <header style="max-width:62ch">
   <h1>هشت ماژول، یک نقشه راه</h1>
@@ -9,8 +9,8 @@
     چهار ماژول بر اساس آزمون مسیر انتخاب می‌شود — اما می‌توانی دستی هم انتخاب کنی.
   </p>
   <div class="row" style="margin-top:1.2rem">
-    <a class="btn" href="/quiz">پیشنهاد خودکار</a>
-    <a class="btn ghost" href="/roadmap/">دیدن نقشه راه نمونه</a>
+    <a class="btn" href="{{page . "quiz"}}">پیشنهاد خودکار</a>
+    <a class="btn ghost" href="{{page . "roadmap"}}">دیدن نقشه راه نمونه</a>
   </div>
 </header>
 
@@ -48,7 +48,7 @@
         </ol>
 
         <div class="row" style="margin-top:1rem">
-          <a class="btn ghost small" href="/roadmap/{{$m.ID}}">این ماژول در یک نقشه راه</a>
+          <a class="btn ghost small" href="{{page $ (print "roadmap/" $m.ID)}}">این ماژول در یک نقشه راه</a>
         </div>
       </article>
       {{end}}

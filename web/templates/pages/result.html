@@ -1,5 +1,5 @@
 {{template "layouts/base_top" .}}
-<nav class="crumbs"><a href="/">خانه</a> / نتیجه</nav>
+<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / نتیجه</nav>
 
 <header style="max-width:60ch">
   <span class="tag accent">نتیجه آزمون مسیر</span>
@@ -35,7 +35,7 @@
           <h3>نقشه راه تو آماده است</h3>
           <p class="muted small" style="margin:0">۱۵ نشست: کارگاه صفر، هسته مشترک، هشت نشست ماژول‌ها، استودیوی پروژه و Demo Day.</p>
         </div>
-        <a class="btn accent" href="/roadmap/{{.Sel}}">دیدن نقشه راه</a>
+        <a class="btn accent" href="{{page . (print "roadmap/" .Sel)}}">دیدن نقشه راه</a>
       </div>
     </div>
   </div>
@@ -47,11 +47,11 @@
       <div class="card">
         <h3>اشتراک نتیجه</h3>
         <div class="row" style="align-items:flex-start;margin-top:.8rem">
-          <img class="qr" src="/result/{{.ID}}/qr.png" width="140" height="140" alt="کد QR نتیجه">
+          <img class="qr" src="{{if .Static}}{{.Root}}result/qr.png{{else}}/result/{{.ID}}/qr.png{{end}}" width="140" height="140" alt="کد QR نتیجه">
           <div class="grow">
             <label class="muted small" for="share-url">لینک یکتا</label>
             <input id="share-url" readonly value="{{.ShareURL}}" onclick="this.select()">
-            <img class="og" src="/result/{{.ID}}/og.svg" width="260" height="137" alt="کارت اشتراک نتیجه" style="margin-top:.7rem">
+            <img class="og" src="{{if .Static}}{{.Root}}result/og.svg{{else}}/result/{{.ID}}/og.svg{{end}}" width="260" height="137" alt="کارت اشتراک نتیجه" style="margin-top:.7rem">
           </div>
         </div>
       </div>
@@ -63,9 +63,9 @@
           <li>اولین خروجی هر ماژول را این هفته بساز</li>
         </ul>
         <div class="row wrap" style="margin-top:1rem">
-          <a class="btn small" href="/roadmap/{{.Sel}}/export.md">دانلود Markdown</a>
-          <a class="btn ghost small" href="/roadmap/{{.Sel}}/export.marp.md">اسلاید</a>
-          <a class="btn ghost small" href="/modules">تغییر ماژول‌ها</a>
+          <a class="btn small" href="{{raw . (print "roadmap/" .Sel "/export.md")}}">دانلود Markdown</a>
+          <a class="btn ghost small" href="{{raw . (print "roadmap/" .Sel "/export.marp.md")}}">اسلاید</a>
+          <a class="btn ghost small" href="{{page . "modules"}}">تغییر ماژول‌ها</a>
         </div>
       </div>
     </div>

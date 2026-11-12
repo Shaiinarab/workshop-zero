@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
 
@@ -71,7 +72,9 @@ func Freeze(out string) error {
 		{"/healthz", "healthz.json"},
 	}
 
+	srv.staticMode = true
 	for _, p := range pages {
+		srv.siteRoot = rootFor(p.file)
 		rec := httptest.NewRecorder()
 		req := httptest.NewRequest(http.MethodGet, p.route, nil)
 		h.ServeHTTP(rec, req)
@@ -91,8 +94,10 @@ func Freeze(out string) error {
 	// browser-side scorer produces resolves to a real roadmap.
 	for _, combo := range lib.Combinations(selectionSize) {
 		p := "/" + quiz.JoinSelection(combo)
+		file := filepath.Join("roadmap", p, "index.html")
+		srv.siteRoot = rootFor(file)
 		rec := httptest.NewRecorder()
-		h.ServeHTTP(rec, httptest.NewRequest(http.MethodGet, "/roadmap/"+p+"?static=1", nil))
+		h.ServeHTTP(rec, httptest.NewRequest(http.MethodGet, "/roadmap"+p+"?static=1", nil))
 		if rec.Code >= 400 {
 			return fmt.Errorf("freeze: roadmap %s → HTTP %d", p, rec.Code)
 		}
@@ -107,9 +112,12 @@ func Freeze(out string) error {
 
 	// The frozen quiz is scored in the browser, so it renders from its own
 	// template with the questions embedded as JSON.
+	srv.siteRoot = "../"
 	qr := httptest.NewRecorder()
 	srv.r.Page(qr, "pages/quiz-static.html", map[string]any{
 		"Title":         "آزمون مسیر",
+		"Root":          srv.siteRoot,
+		"Static":        true,
 		"Total":         len(srv.quiz.Questions),
 		"QuestionsJSON": template.JS(quizQuestionsJSON(srv.quiz.Questions)),
 		"ModulesJSON":   template.JS(moduleListJSON(lib)),
@@ -161,6 +169,17 @@ func quizQuestionsJSON(qs []quiz.Question) string {
 }
 
 const selectionSize = 4
+
+// rootFor turns an output path into the relative prefix a page needs to reach
+// the site root ("index.html" -> "./", "roadmap/a,b/index.html" -> "../../").
+func rootFor(file string) string {
+	d := path.Dir(filepath.ToSlash(file))
+	if d == "." || d == "/" {
+		return "./"
+	}
+	depth := len(strings.Split(d, "/"))
+	return strings.Repeat("../", depth)
+}
 
 func moduleListJSON(lib *plan.Library) string {
 	type lite struct {

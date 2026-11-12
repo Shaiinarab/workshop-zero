@@ -12,6 +12,7 @@
       <div class="row wrap" style="margin-top:.5rem">{{range .I.Tools}}<span class="tag">{{.}}</span>{{end}}</div>
       {{end}}
       <div class="row" style="margin-top:.7rem">
+        {{if not .Static}}
         <button class="btn ghost small" type="button"
                 hx-get="/roadmap/{{.Sel}}/session/{{.I.N}}"
                 hx-target="#detail-{{.I.N}}" hx-swap="innerHTML"
@@ -24,6 +25,7 @@
           <label class="check"><input type="checkbox" name="done" value="1"> انجام شد</label>
           <noscript><button class="btn ghost small" type="submit">ثبت</button></noscript>
         </form>
+        {{end}}
       </div>
       <div id="detail-{{.I.N}}" class="detail"></div>
     </div>

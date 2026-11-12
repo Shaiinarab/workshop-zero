@@ -1,4 +1,4 @@
-name: Pages
+name: CI
 
 on:
   push:
@@ -6,16 +6,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -33,13 +27,22 @@ jobs:
       - name: Install node deps
         run: npm install --no-audit --no-fund
 
-      - name: Compile TypeScript
+      - name: TypeScript
         run: npx tsc -p tsconfig.json
+
+      - name: Go build and test
+        run: |
+          go build ./...
+          go vet ./...
+          go test ./...
+
+      - name: htmx upgrade check
+        run: npx --yes htmx.org@4.0.0 upgrade-check -- ./web/templates
 
       - name: Freeze static snapshot
         run: go run ./cmd/server freeze dist
 
-      - name: Assert no external runtime requests
+      - name: Assert no external runtime URLs
         run: |
           bad=$(grep -rnoE '(src|href)="https?://[^"]+' dist --include='*.html' --include='*.css' \
                  | grep -v '127.0.0.1' | grep -v 'localhost' || true)
@@ -47,18 +50,16 @@ jobs:
             echo "$bad"; echo "::error::external runtime URL found"; exit 1
           fi
 
-      - uses: actions/configure-pages@v5
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publish dist to gh-pages
+        if: github.ref == 'refs/heads/main'
+        run: |
+          cd dist
+          git init -q
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -q -b gh-pages
+          git add -A
+          git commit -q -m "deploy: $(git rev-parse --short HEAD)"
+          git push -q --force https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

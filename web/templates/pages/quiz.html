@@ -1,5 +1,5 @@
 {{template "layouts/base_top" .}}
-<nav class="crumbs"><a href="/">خانه</a> / آزمون مسیر</nav>
+<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / آزمون مسیر</nav>
 
 <header style="max-width:56ch">
   <h1>آزمون مسیر</h1>
@@ -20,7 +20,7 @@
       <noscript>
         <div class="card">
           <p>بدون جاوااسکریپت هم می‌توانی ادامه بدهی:</p>
-          <a class="btn" href="/quiz/{{.ID}}/q/1">شروع سؤال اول</a>
+          <a class="btn" href="{{page . (print "quiz/" .ID "/q/1")}}">شروع سؤال اول</a>
         </div>
       </noscript>
       <div class="card skeleton">در حال آماده‌سازی…</div>

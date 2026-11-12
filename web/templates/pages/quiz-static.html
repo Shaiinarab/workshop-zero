@@ -1,5 +1,5 @@
 {{template "layouts/base_top" .}}
-<nav class="crumbs"><a href="/">خانه</a> / آزمون مسیر</nav>
+<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / آزمون مسیر</nav>
 <header style="max-width:56ch">
   <h1>آزمون مسیر</h1>
   <p class="muted">{{faNum .Total}} سؤال کوتاه. این نسخه آفلاین است و امتیازدهی در مرورگر انجام می‌شود.</p>
@@ -12,6 +12,6 @@
     </noscript>
     <div class="card skeleton">در حال بارگذاری…</div>
   </div>
-  <script type="module" src="/static/js/quiz-static.js"></script>
+  <script type="module" src="{{asset . "static/js/quiz-static.js"}}"></script>
 </div>
 {{template "layouts/base_bottom" .}}

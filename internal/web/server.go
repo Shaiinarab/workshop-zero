@@ -34,6 +34,10 @@ type Server struct {
 
 	mu      sync.Mutex
 	streams map[string]*streamState
+
+	// Set by Freeze so the same templates emit subpath-relative URLs.
+	siteRoot   string
+	staticMode bool
 }
 
 type streamState struct {
@@ -130,6 +134,8 @@ func (s *Server) page(w http.ResponseWriter, name, title string, data map[string
 		data = map[string]any{}
 	}
 	data["Title"] = title
+	data["Root"] = s.siteRoot
+	data["Static"] = s.staticMode
 	s.r.Page(w, name, data)
 }
 
@@ -233,6 +239,8 @@ func (s *Server) handleQuizQuestion(w http.ResponseWriter, r *http.Request) {
 		"Pct": pct, "Answered": answered,
 	}
 	if isHTMX(r) {
+		data["Root"] = s.siteRoot
+		data["Static"] = s.staticMode
 		s.r.Fragment(w, "fragments/quiz-question.html", data)
 		return
 	}

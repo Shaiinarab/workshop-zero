@@ -91,7 +91,7 @@ export function initStaticQuiz(): void {
               <h3 style="margin:0">نقشه راه تو آماده است</h3>
               <p class="muted small" style="margin:.3rem 0 0">۱۵ نشست: کارگاه صفر، هسته مشترک، هشت نشست ماژول‌ها، استودیوی پروژه و Demo Day.</p>
             </div>
-            <a class="btn accent" href="../roadmap/${score.selected.join('-')}/index.html">دیدن نقشه راه</a>
+            <a class="btn accent" href="../roadmap/${score.selected.join(',')}/index.html">دیدن نقشه راه</a>
           </div>
         </div>
       </div></section>`;

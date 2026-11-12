@@ -1,5 +1,5 @@
 {{template "layouts/base_top" .}}
-<nav class="crumbs"><a href="/">خانه</a> / داشبورد مربی</nav>
+<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / داشبورد مربی</nav>
 
 <header style="max-width:56ch">
   <h1>داشبورد مربی</h1>
@@ -68,10 +68,10 @@
       <div class="card">
         <h3 style="margin-top:0">دسترسی سریع</h3>
         <div class="row wrap">
-          <a class="btn ghost small" href="/quiz">آزمون</a>
-          <a class="btn ghost small" href="/modules">ماژول‌ها</a>
-          <a class="btn ghost small" href="/roadmap/">نقشه راه نمونه</a>
-          <a class="btn ghost small" href="/live/export.jsonl">خروجی رویدادها</a>
+          <a class="btn ghost small" href="{{page . "quiz"}}">آزمون</a>
+          <a class="btn ghost small" href="{{page . "modules"}}">ماژول‌ها</a>
+          <a class="btn ghost small" href="{{page . "roadmap"}}">نقشه راه نمونه</a>
+          <a class="btn ghost small" href="{{page . "live/export.jsonl"}}">خروجی رویدادها</a>
         </div>
       </div>
     </div>

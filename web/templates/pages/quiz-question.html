@@ -1,5 +1,5 @@
 {{template "layouts/base_top" .}}
-<nav class="crumbs"><a href="/quiz/{{.ID}}">آزمون مسیر</a> / سؤال {{faNum .N}}</nav>
+<nav class="crumbs"><a href="{{page . (print "quiz/" .ID)}}">آزمون مسیر</a> / سؤال {{faNum .N}}</nav>
 <div class="container narrow">
   <div id="quiz-progress">
     {{template "fragments/quiz-progress.html" .}}

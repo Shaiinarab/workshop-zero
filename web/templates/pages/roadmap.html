@@ -1,5 +1,5 @@
 {{template "layouts/base_top" .}}
-<nav class="crumbs"><a href="/">خانه</a> / نقشه راه</nav>
+<nav class="crumbs"><a href="{{page . ""}}">خانه</a> / نقشه راه</nav>
 
 <header class="row between wrap" style="align-items:flex-end">
   <div style="max-width:60ch">
@@ -9,13 +9,13 @@
       استودیوی پروژه و Demo Day. ترکیب زیر بر اساس انتخاب تو ساخته شده است.
     </p>
     <div class="row wrap" style="margin-top:.8rem">
-      {{range .Plan.Modules}}<a class="tag teal" href="/modules#{{.ID}}">{{.Title}}</a>{{end}}
+      {{range .Plan.Modules}}<a class="tag teal" href="{{page $ "modules"}}#{{.ID}}">{{.Title}}</a>{{end}}
     </div>
   </div>
   <div class="row wrap">
-    <a class="btn ghost small" href="/modules">تغییر ماژول‌ها</a>
-    <a class="btn ghost small" href="/roadmap/{{.Sel}}/export.md">Markdown</a>
-    <a class="btn ghost small" href="/roadmap/{{.Sel}}/export.marp.md">اسلاید</a>
+    <a class="btn ghost small" href="{{page . "modules"}}">تغییر ماژول‌ها</a>
+    <a class="btn ghost small" href="{{raw . (print "roadmap/" .Sel "/export.md")}}">Markdown</a>
+    <a class="btn ghost small" href="{{raw . (print "roadmap/" .Sel "/export.marp.md")}}">اسلاید</a>
   </div>
 </header>
 
@@ -37,7 +37,7 @@
     {{if .Static}}
     <div class="plan">
       {{range .Plan.Items}}
-      {{template "fragments/plan-item.html" (item $.Sel .)}}
+      {{template "fragments/plan-item.html" (item . $.Sel .)}}
       {{end}}
     </div>
     {{else}}
@@ -47,7 +47,7 @@
     <noscript>
       <div class="card">
         <p>برای دیدن نقشه راه بدون جاوااسکریپت، نسخه متنی را بگیر:</p>
-        <a class="btn ghost small" href="/roadmap/{{.Sel}}/export.md">دانلود Markdown</a>
+        <a class="btn ghost small" href="{{raw . (print "roadmap/" .Sel "/export.md")}}">دانلود Markdown</a>
       </div>
     </noscript>
     {{end}}
