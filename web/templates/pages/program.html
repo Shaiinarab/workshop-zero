@@ -2,26 +2,32 @@
 
 <nav class="crumbs"><a href="{{page . ""}}">خانه</a> / جلسه آشنایی</nav>
 
-<header style="max-width:62ch">
-  <h1>کارگاه صفر: جلسه آشنایی و کشف مسیر</h1>
+<header style="max-width:68ch">
+  <h1>کارگاه صفر: از شگفتی تا عاملیت</h1>
   <p class="muted">
-    این جلسه ۱۸۰ دقیقه‌ای نقطه ورود مشترک برنامه است؛ معرفی مسیرها، تمرین کوتاه،
-    شناخت نیاز دانشجو و آشنایی با روش یادگیری پروژه‌محور. این جلسه به‌تنهایی
-    جایگزین کارگاه‌های تخصصی و پروژه نهایی نیست.
+    یک تجربه ۱۸۰ دقیقه‌ای برای دانشجویان رشته‌های مختلف؛ از شناخت درست هوش مصنوعی
+    تا ساخت یک خروجی کوچک، بررسی خطاها و انتخاب مسیر تخصصی. این جلسه تور ابزار یا
+    وعده متخصص‌سازی فوری نیست؛ نقطه شروعی عملی و قابل ارزیابی است.
   </p>
+  <div class="row wrap" style="margin-top:1rem">
+    <a class="btn accent" href="{{page . "workshop"}}">مطالعه راهنمای کامل مدرس و اجرا</a>
+    <a class="btn ghost" href="{{page . "proposal"}}">مشاهده پروپوزال برنامه</a>
+  </div>
 </header>
 
 <section class="block tight alt">
   <div class="container">
     <div class="sec-head">
       <span class="sec-num">۰۰</span>
-      <h2>روایت جلسه: از شگفتی تا عاملیت</h2>
-      <p class="sub">این جلسه یک تور ابزار نیست؛ تجربه‌ای اکتشافی است که دانشجو را از تماشاگر به سازنده تبدیل می‌کند.</p>
+      <h2>روایت جلسه: از تماشاگر تا سازنده</h2>
+      <p class="sub">پنج پرده آموزشی که هرکدام یک تغییر قابل مشاهده در نقش شرکت‌کننده ایجاد می‌کنند.</p>
     </div>
     <div class="grid three">
-      <article class="card"><span class="tag accent">۱ · کنجکاوی</span><h3>یک مسئله واقعی</h3><p class="muted">با یک چالش ملموس شروع می‌کنیم، نه با انبوه اصطلاحات و تاریخچه.</p></article>
-      <article class="card"><span class="tag accent">۲ · کشف</span><h3>دیدن پشت صحنه</h3><p class="muted">تفاوت مدل، داده، ابزار و workflow را می‌فهمیم.</p></article>
-      <article class="card"><span class="tag accent">۳ · ساختن</span><h3>آزمایش و تکرار</h3><p class="muted">با مسئله‌ای انتخابی کار می‌کنیم، خروجی می‌سازیم و آن را نقد و اصلاح می‌کنیم.</p></article>
+      <article class="card"><span class="tag accent">۱ · کنجکاوی</span><h3>یک مسئله واقعی</h3><p class="muted">شروع با مسئله‌ای ملموس و چند خروجی متفاوت، نه تاریخچه طولانی و اصطلاحات بی‌مصرف.</p></article>
+      <article class="card"><span class="tag accent">۲ · کشف</span><h3>دیدن پشت صحنه</h3><p class="muted">تفکیک مدل، داده، قابلیت، اپلیکیشن، API و گردش‌کار.</p></article>
+      <article class="card"><span class="tag accent">۳ · اصطکاک</span><h3>آزمایش و خطا</h3><p class="muted">مشاهده اینکه زمینه، محدودیت و معیار چگونه کیفیت خروجی را تغییر می‌دهند.</p></article>
+      <article class="card"><span class="tag accent">۴ · عاملیت</span><h3>ساختن با انتخاب خود</h3><p class="muted">تبدیل یک مسئله انتخابی به نمونه اولیه با حفظ تصمیم‌گیری انسانی.</p></article>
+      <article class="card"><span class="tag accent">۵ · ادامه</span><h3>انتخاب مسیر</h3><p class="muted">شناخت قدم بعدی در آفرینش دیجیتال، مهندسی AI یا پژوهش و سامانه‌های هوشمند.</p></article>
     </div>
   </div>
 </section>
@@ -30,31 +36,10 @@
   <div class="container">
     <div class="sec-head">
       <span class="sec-num">۰۱</span>
-      <h2>سه ایستگاه آشنایی</h2>
-    </div>
-    <div class="grid three">
-      {{range $i, $s := .Stations}}
-      <article class="card hover">
-        <span class="tag accent">ایستگاه {{faNum (add $i 1)}}</span>
-        <div class="md-body" style="margin-top:.9rem">{{md $s.Body}}</div>
-      </article>
-      {{end}}
-    </div>
-  </div>
-</section>
-
-<section class="block tight alt">
-  <div class="container">
-    <div class="sec-head">
-      <span class="sec-num">۰۲</span>
-      <h2>خط زمانی ۱۸۰ دقیقه</h2>
-      <p class="sub">زمان‌بندی نمونه برای جلسه آغازین؛ با ساعت و امکانات کلاس تنظیم می‌شود.</p>
+      <h2>برنامه اجرایی دقیق · ۱۸۰ دقیقه</h2>
+      <p class="sub">این زمان‌بندی از راهنمای اصلی کارگاه استخراج شده است؛ دیگر خبری از چهار ایستگاه ساختگیِ ۴۵ دقیقه‌ای نیست.</p>
     </div>
     <div class="card">
-      <div class="progress-wrap">
-        <div class="progress"><span style="width:{{pct .Agenda.Elapsed .Agenda.Total}}%"></span></div>
-        <span class="small muted">اکنون: دقیقه {{faNum .Agenda.Elapsed}} — {{.Agenda.Title}}</span>
-      </div>
       <ol class="timeline">
         {{range .Agenda.Items}}
         <li>
@@ -63,6 +48,23 @@
         </li>
         {{end}}
       </ol>
+      <p class="small muted">جمع زمان‌ها: {{faNum .Agenda.Total}} دقیقه، شامل ۱۰ دقیقه استراحت.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block tight alt">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-num">۰۲</span>
+      <h2>دانشجو دقیقاً چه چیزی انجام می‌دهد؟</h2>
+      <p class="sub">فعالیت‌ها باید به یک خروجی قابل مشاهده و یک تصمیم قابل توضیح ختم شوند.</p>
+    </div>
+    <div class="grid two">
+      <article class="card"><h3>آزمایش «یک ایده، سه دستور»</h3><p class="muted">یک مسئله را با دستور ساده، سپس با زمینه و مخاطب، و در نهایت با محدودیت و معیار موفقیت اجرا می‌کند و تفاوت را ثبت می‌کند.</p></article>
+      <article class="card"><h3>کارآگاه خطا</h3><p class="muted">یک پاسخ قانع‌کننده اما مشکوک را بررسی می‌کند و روش راستی‌آزمایی آن را توضیح می‌دهد.</p></article>
+      <article class="card"><h3>از متن به محصول</h3><p class="muted">یک خروجی را به طرح بصری، نمودار، storyboard، نمونه رابط یا گردش‌کار تبدیل می‌کند.</p></article>
+      <article class="card"><h3>چالش تیمی</h3><p class="muted">در گروه‌های ۳ تا ۴ نفره، مسئله‌پرداز، هدایت‌گر AI، منتقد/راستی‌آزما و ارائه‌دهنده نقش می‌گیرند.</p></article>
     </div>
   </div>
 </section>
@@ -71,13 +73,34 @@
   <div class="container">
     <div class="sec-head">
       <span class="sec-num">۰۳</span>
-      <h2>چرا این روش یادگیری جواب می‌دهد؟</h2>
-      <p class="sub">تمرکز بر تجربه موفقیت کوچک، انتخاب شخصی، تمرین هدایت‌شده و بازتاب؛ نه حفظ کردن نام ابزارها.</p>
+      <h2>چرا این طراحی آموزشی؟</h2>
+      <p class="sub">روان‌شناسی یادگیری در اینجا به انتخاب فعالیت و ترتیب آن کمک می‌کند، نه اینکه صرفاً چند اصطلاح جذاب به پروپوزال اضافه کند.</p>
     </div>
     <div class="grid three">
-      <article class="card"><h3>خودکارآمدی</h3><p class="muted">یک خروجی کوچک و قابل مشاهده در شروع، حس «می‌توانم یاد بگیرم» را به تجربه تبدیل می‌کند.</p></article>
-      <article class="card"><h3>امنیت روانی</h3><p class="muted">خطا بخشی از آزمایش است. دانشجو می‌تواند سؤال بپرسد، اشتباه کند و خروجی مدل را به چالش بکشد.</p></article>
-      <article class="card"><h3>عاملیت و بازتاب</h3><p class="muted">دانشجو هدف و معیار را تعیین می‌کند، خروجی را می‌سنجد و تصمیم می‌گیرد چه چیزی باید تغییر کند.</p></article>
+      <article class="card"><h3>خودکارآمدی</h3><p class="muted">تمرین با یک موفقیت کوچک و قابل مشاهده آغاز می‌شود و دشواری به‌تدریج بالا می‌رود.</p></article>
+      <article class="card"><h3>خودمختاری و ارتباط</h3><p class="muted">دانشجو مسئله‌ای معنادار انتخاب می‌کند و بخشی از یادگیری در تعامل گروهی رخ می‌دهد.</p></article>
+      <article class="card"><h3>کاهش بار شناختی</h3><p class="muted">هر فعالیت یک مفهوم تازه را برجسته می‌کند؛ نصب و ساخت حساب‌های متعدد هدف کلاس نیست.</p></article>
+      <article class="card"><h3>امنیت روانی</h3><p class="muted">خطا فرصتی برای تحلیل است و هیچ‌کس به‌خاطر ندانستن اصطلاحات فنی تحقیر نمی‌شود.</p></article>
+      <article class="card"><h3>فراشناخت و عاملیت</h3><p class="muted">شرکت‌کننده معیار موفقیت را تعیین می‌کند، خروجی را می‌سنجد و درباره تغییر بعدی تصمیم می‌گیرد.</p></article>
+      <article class="card"><h3>بازیابی و بازتاب</h3><p class="muted">جلسه با برگه خروج تمام می‌شود: چه آموختم، چه چیزی را باور نکردم و قدم بعدی چیست؟</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="block tight alt">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-num">۰۴</span>
+      <h2>سه مسیر ادامه یادگیری</h2>
+    </div>
+    <div class="grid three">
+      <article class="card"><h3>Creative AI Studio</h3><p class="muted">برای تبدیل ایده به تصویر، صدا، موسیقی، ویدیو و تجربه بصری.</p></article>
+      <article class="card"><h3>AI Builder & Agent Engineering</h3><p class="muted">برای ساخت ابزار، اپلیکیشن، گردش‌کار و سامانه‌های هوشمند.</p></article>
+      <article class="card"><h3>AI Research & Intelligent Systems</h3><p class="muted">برای فهم مدل‌ها، تحلیل داده، پژوهش و ارزیابی علمی.</p></article>
+    </div>
+    <div class="section-actions">
+      <a class="btn accent" href="{{page . "workshop"}}">راهنمای کامل اجرا، تمرین‌ها و منابع پژوهشی</a>
+      <a class="text-link" href="{{page . "proposal"}}">پروپوزال کامل برنامه</a>
     </div>
   </div>
 </section>
