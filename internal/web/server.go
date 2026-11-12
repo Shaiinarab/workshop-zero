@@ -77,6 +77,7 @@ func (s *Server) Routes() http.Handler {
 	mux.HandleFunc("GET /healthz", s.handleHealth)
 
 	mux.HandleFunc("GET /program", s.handleProgram)
+	mux.HandleFunc("GET /workshop", s.handleWorkshop)
 	mux.HandleFunc("GET /modules", s.handleModules)
 	mux.HandleFunc("GET /proposal", s.handleProposal)
 	mux.HandleFunc("GET /tools", s.handleTools)
@@ -179,6 +180,12 @@ func (s *Server) handleProgram(w http.ResponseWriter, r *http.Request) {
 	s.page(w, "pages/program.html", "برنامه", map[string]any{
 		"Stations": markdownDir("stations"),
 		"Agenda":   agendaState(),
+	})
+}
+
+func (s *Server) handleWorkshop(w http.ResponseWriter, r *http.Request) {
+	s.page(w, "pages/workshop.html", "راهنمای کارگاه صفر", map[string]any{
+		"Guide": markdownFile("workshops/general-zero-workshop.md"),
 	})
 }
 
@@ -610,34 +617,16 @@ func agendaState() map[string]any {
 		Note  string
 	}
 	items := []item{
-		{0, 45, "ایستگاه یک — کشف", "شناخت مسیرها، آزمون و انتخاب ماژول"},
-		{45, 90, "ایستگاه دو — ساخت", "کار عملی روی یک مسئله واقعی"},
-		{90, 135, "ایستگاه سه — ارائه", "ارائه کوتاه و بازخورد"},
-		{135, 180, "جمع‌بندی و نقشه راه", "ساخت نقشه راه شخصی و قدم بعدی"},
+		{0, 15, "قلاب داستانی و مسئله واقعی", "نمایش چند خروجی متفاوت و طرح پرسش آغازین"},
+		{15, 35, "نقشه جهان هوش مصنوعی", "شناخت AI، مدل، داده، ابزار، قابلیت و API"},
+		{35, 55, "آزمایش زنده", "مقایسه دستور مبهم با درخواست زمینه‌دار و معیارمند"},
+		{55, 110, "آزمایشگاه هدایت‌شده", "تمرین فردی یا دونفره با چرخه برنامه‌ریزی، ساخت، بررسی و تکرار"},
+		{110, 120, "استراحت و گالری", "نمایش سریع خروجی‌ها و مرور تجربه‌ها"},
+		{120, 155, "چالش تیمی", "تبدیل یک مسئله انتخابی به نمونه اولیه"},
+		{155, 170, "نمایش و نقد", "ارائه کوتاه، بازخورد همتا و راستی‌آزمایی"},
+		{170, 180, "برگه خروج و مسیر بعدی", "یادآوری آموخته‌ها و انتخاب قدم بعدی"},
 	}
-	now := time.Now()
-	elapsed := now.Hour()*60 + now.Minute() - 9*60
-	if elapsed < 0 {
-		elapsed = 0
-	}
-	if elapsed > 180 {
-		elapsed = 180
-	}
-	idx := 0
-	for i, it := range items {
-		if elapsed >= it.Start && elapsed < it.End {
-			idx = i
-			break
-		}
-		if elapsed >= it.End {
-			idx = i
-		}
-	}
-	cur := items[idx]
-	return map[string]any{
-		"Index": idx, "Title": cur.Title, "Note": cur.Note,
-		"Elapsed": elapsed, "Remain": cur.End - elapsed, "Total": 180, "Items": items,
-	}
+	return map[string]any{"Total": 180, "Items": items}
 }
 
 // ------------------------------------------------------------------ tools
