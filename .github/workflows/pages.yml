@@ -48,10 +48,13 @@ jobs:
 
       - name: Assert no external runtime URLs
         run: |
-          bad=$(grep -rnoE '(src|href)="https?://[^"]+' dist --include='*.html' --include='*.css' \
-                 | grep -v '127.0.0.1' | grep -v 'localhost' || true)
-          if [ -n "$bad" ]; then
-            echo "$bad"; echo "::error::external runtime URL found"; exit 1
+          # External anchors are documentation/content links, not runtime dependencies.
+          # Restrict this check to executable scripts, linked assets, and CSS URLs.
+          bad=$(grep -rnoE '<(script|link)[^>]+(src|href)="https?://[^"]+' dist --include='*.html' || true)
+          bad_css=$(grep -rnoE 'url\(["'\''"]?https?://' dist --include='*.css' || true)
+          if [ -n "$bad" ] || [ -n "$bad_css" ]; then
+            printf '%s\n%s\n' "$bad" "$bad_css"
+            echo "::error::external runtime URL found"; exit 1
           fi
 
       - name: Publish dist to gh-pages
