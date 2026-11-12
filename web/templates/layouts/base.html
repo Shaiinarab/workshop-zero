@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111923">
   <title>{{.Title}} — کارگاه صفر</title>
-  <meta name="description" content="کارگاه صفر: پیشنهاد یک برنامه آموزشی برای دانشجویان موسسه آموزش عالی زند شیراز — سه ایستگاه، ماژول‌های modular و یک نقشه راه شخصی.">
+  <meta name="description" content="کارگاه صفر؛ آزمایشگاه کاربردی هوش مصنوعی برای دانشجویان موسسه آموزش عالی زند شیراز. از شناخت مدل‌ها تا ساخت نمونه‌های واقعی.">
   <meta property="og:title" content="{{.Title}} — کارگاه صفر">
-  <meta property="og:description" content="سه ایستگاه، هشت ماژول، یک نقشه راه شخصی.">
+  <meta property="og:description" content="از کاربر هوش مصنوعی به سازنده؛ یک تجربه عملی، یک مسیر شخصی، یک خروجی واقعی.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23141018'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23C8452D' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111923'/%3E%3Cpath d='M8 16h16M16 8v16' stroke='%237DE0C3' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23F4A261' stroke-width='2'/%3E%3C/svg%3E">
   <link rel="preload" href="{{asset . "static/fonts/vazirmatn-variable.woff2"}}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{asset . "static/css/app.css"}}">
   <script src="{{asset . "static/vendor/runtime/runtime.js"}}"></script>
@@ -19,18 +20,18 @@
 </head>
 <body>
 <a class="skip" href="#main">پرش به محتوا</a>
-<nav class="top">
-  <a href="{{page . ""}}" class="brand"><span class="dot"></span> کارگاه صفر</a>
+<nav class="top" aria-label="ناوبری اصلی">
+  <a href="{{page . ""}}" class="brand"><span class="dot"></span><span>کارگاه صفر</span><small>آزمایشگاه کاربردی هوش مصنوعی</small></a>
   <a class="link" href="{{page . "program"}}">برنامه</a>
   <a class="link" href="{{page . "modules"}}">ماژول‌ها</a>
-  <a class="link" href="{{page . "proposal"}}">پیشنهاد</a>
-  <a href="{{page . "roadmap"}}" class="link">نقشه راه</a>
-  <a class="link" href="{{page . "tools"}}">ابزارها</a>
+  <a class="link" href="{{page . ""}}#proposal">پروپوزال</a>
+  <a class="link" href="{{page . "roadmap"}}">نقشه راه</a>
+  <a class="link" href="{{page . "tools"}}">منابع</a>
   <a class="link" href="{{page . "faq"}}">پرسش‌ها</a>
   <span class="spacer"></span>
-  <span class="chip" id="counter" data-counter> hx-swap="innerHTML" title="تعداد افرادی که مسیرشان را ساخته‌اند">…</span>
-  <button class="btn ghost small" data-toggle-theme type="button">تم</button>
-  <a class="btn accent small" href="{{page . "quiz"}}">شروع</a>
+  <span class="chip" id="counter" data-counter title="تعداد افرادی که مسیرشان را ساخته‌اند">…</span>
+  <button class="btn ghost small theme-toggle" data-toggle-theme type="button" aria-label="تغییر پوسته">◐</button>
+  <a class="btn accent small nav-cta" href="{{page . "quiz"}}">شروع</a>
 </nav>
 <main id="main">
 {{end}}
@@ -38,15 +39,13 @@
 {{define "layouts/base_bottom"}}
 </main>
 <footer class="site">
-  <div class="container row between wrap">
-    <div>
-      <strong>کارگاه صفر</strong> — پیشنهاد برنامه برای دانشجویان موسسه آموزش عالی زند شیراز
-    </div>
+  <div class="container footer-inner">
+    <div><strong>کارگاه صفر</strong><span>از شناخت تا ساخت · موسسه آموزش عالی زند شیراز</span></div>
     <div class="row wrap">
       <a href="{{page . "program"}}">برنامه</a>
       <a href="{{page . "modules"}}">ماژول‌ها</a>
-      <a href="{{page . "proposal"}}">پیشنهاد</a>
-      <a href="{{page . "tools"}}">ابزارها</a>
+      <a href="{{page . ""}}#proposal">پروپوزال</a>
+      <a href="{{page . "tools"}}">منابع</a>
       <a href="{{page . "faq"}}">پرسش‌ها</a>
     </div>
   </div>
