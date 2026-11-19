@@ -56,6 +56,14 @@ go run ./cmd/server freeze dist
 - [Stanford CS329Z — Engineering AI Agents](https://cs329z.stanford.edu/)
 - [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 
+## اکوسیستم آموزشی زند
+
+این کارگاه مستقل است و از طریق پورتال انجمن به دو مسیر آموزشی دیگر متصل می‌شود:
+
+- [پورتال انجمن مهندسی کامپیوتر زند](https://shaiinarab.github.io/zand-ce-association/)
+- [بوت‌کرفت — سیستم‌عامل و بازیابی امن](https://shaiinarab.github.io/bootcraft-workshops/)
+- [آخرین قطرات هایپ — بلاکچین و DeFi](https://shaiinarab.github.io/crypto-hype-last-drops/)
+
 ## توسعه و بررسی
 
 ~~~bash
