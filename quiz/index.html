@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111923">
+  <title>آزمون مسیر — کارگاه صفر</title>
+  <meta name="description" content="کارگاه صفر؛ آزمایشگاه کاربردی هوش مصنوعی برای دانشجویان موسسه آموزش عالی زند شیراز. از شناخت مدل‌ها تا ساخت نمونه‌های واقعی.">
+  <meta property="og:title" content="آزمون مسیر — کارگاه صفر">
+  <meta property="og:description" content="از کاربر هوش مصنوعی به سازنده؛ یک تجربه عملی، یک مسیر شخصی، یک خروجی واقعی.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111923'/%3E%3Cpath d='M8 16h16M16 8v16' stroke='%237DE0C3' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23F4A261' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preload" href="../static/fonts/vazirmatn-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/app.css">
+  <script src="../static/vendor/runtime/runtime.js"></script>
+  <script src="../static/vendor/runtime/hx-sse.js"></script>
+  <script src="../static/vendor/runtime/hx-preload.js"></script>
+  <script type="module" src="../static/js/theme.js"></script>
+  <script type="module" src="../static/js/quiz-keys.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">پرش به محتوا</a>
+<nav class="top" aria-label="ناوبری اصلی">
+  <a href="../index.html" class="brand"><span class="dot"></span><span>کارگاه صفر</span><small>آزمایشگاه کاربردی هوش مصنوعی</small></a>
+  <a class="link" href="../program/index.html">برنامه</a>
+  <a class="link" href="../workshop/index.html">راهنمای کارگاه صفر</a>
+  <a class="link" href="../modules/index.html">ماژول‌ها</a>
+  <a class="link" href="../index.html#proposal">پروپوزال</a>
+  <a class="link" href="../roadmap/index.html">نقشه راه</a>
+  <a class="link" href="../tools/index.html">منابع</a>
+  <a class="link" href="../faq/index.html">پرسش‌ها</a>
+  <span class="spacer"></span>
+  <span class="chip" id="counter" data-counter title="تعداد افرادی که مسیرشان را ساخته‌اند">…</span>
+  <button class="btn ghost small theme-toggle" data-toggle-theme type="button" aria-label="تغییر پوسته">◐</button>
+  <a class="btn accent small nav-cta" href="../quiz/index.html">شروع</a>
+</nav>
+<main id="main">
+
+<nav class="crumbs"><a href="../index.html">خانه</a> / آزمون مسیر</nav>
+<header style="max-width:56ch">
+  <h1>آزمون مسیر</h1>
+  <p class="muted">۱۰ سؤال کوتاه. این نسخه آفلاین است و امتیازدهی در مرورگر انجام می‌شود.</p>
+</header>
+<div class="container narrow">
+  <script type="application/json" id="quiz-data">[{"id":1,"text":"در یک پروژه تازه، کدام بخش برایت جذاب‌تر است؟","options":[{"key":"A","text":"ساخت تصویر، صدا یا ویدیوی جذاب","modules":["m3","m4"]},{"key":"B","text":"ساخت یک ابزار یا برنامه کاربردی","modules":["m6","m7"]},{"key":"C","text":"تحقیق، تحلیل داده و بررسی شواهد","modules":["m2","m5"]}]},{"id":2,"text":"بیشتر دوست داری با چه نوع مسئله‌ای کار کنی؟","options":[{"key":"A","text":"یک ایده را به محتوای بصری تبدیل کنم","modules":["m3","m4"]},{"key":"B","text":"یک فرایند تکراری را خودکار کنم","modules":["m7","m8"]},{"key":"C","text":"از داده یا مقاله به یک نتیجه قابل دفاع برسم","modules":["m2","m5"]}]},{"id":3,"text":"در یک تیم پروژه، کدام نقش را ترجیح می‌دهی؟","options":[{"key":"A","text":"طراح و تولیدکننده خروجی نهایی","modules":["m3","m4"]},{"key":"B","text":"توسعه‌دهنده و سازنده نمونه اولیه","modules":["m6","m7"]},{"key":"C","text":"پژوهشگر، تحلیل‌گر و ارزیاب","modules":["m2","m5"]}]},{"id":4,"text":"کدام خروجی برایت رضایت‌بخش‌تر است؟","options":[{"key":"A","text":"پوستر، تصویر، موسیقی یا ویدیوی کامل","modules":["m3","m4"]},{"key":"B","text":"اپلیکیشن یا دستیار هوشمند قابل اجرا","modules":["m6","m7","m8"]},{"key":"C","text":"گزارش پژوهشی یا تحلیل داده مستند","modules":["m2","m5"]}]},{"id":5,"text":"برای یادگیری یک موضوع جدید معمولاً چه روشی را ترجیح می‌دهی؟","options":[{"key":"A","text":"دیدن نمونه و ساختن یک اثر","modules":["m3","m4"]},{"key":"B","text":"آزمایش کردن ابزار و کدنویسی","modules":["m6","m7"]},{"key":"C","text":"خواندن منبع، مقایسه و یادداشت‌برداری","modules":["m1","m2","m5"]}]},{"id":6,"text":"چقدر با برنامه‌نویسی آشنایی داری؟","options":[{"key":"A","text":"تقریباً هیچ؛ ابزارهای بصری را ترجیح می‌دهم","modules":["m3","m4"]},{"key":"B","text":"مقدماتی؛ می‌توانم کد را بخوانم و تغییر دهم","modules":["m6","m7"]},{"key":"C","text":"متوسط یا بیشتر؛ آماده کار با داده و سیستم هستم","modules":["m5","m7","m8"]}]},{"id":7,"text":"وقتی مدل هوش مصنوعی پاسخی می‌دهد، چه چیزی برایت مهم‌تر است؟","options":[{"key":"A","text":"کیفیت و انسجام خروجی خلاقانه","modules":["m3","m4"]},{"key":"B","text":"اینکه بتوانم پاسخ را در برنامه خودم استفاده کنم","modules":["m6","m7","m8"]},{"key":"C","text":"اینکه شواهد و منابع آن قابل بررسی باشند","modules":["m1","m2","m5"]}]},{"id":8,"text":"کدام موضوع را بیشتر دوست داری عمیق‌تر یاد بگیری؟","options":[{"key":"A","text":"طراحی، تصویر، صدا و روایت چندرسانه‌ای","modules":["m3","m4"]},{"key":"B","text":"API، Agent، RAG و ساخت نرم‌افزار","modules":["m6","m7","m8"]},{"key":"C","text":"مدل‌ها، پژوهش، داده و ارزیابی","modules":["m1","m2","m5"]}]},{"id":9,"text":"در استفاده از AI، کدام نگرانی را جدی‌تر می‌گیری؟","options":[{"key":"A","text":"حق نشر، اصالت اثر و مجوز محتوا","modules":["m1","m3","m4"]},{"key":"B","text":"امنیت، کلیدها، داده و دسترسی ابزارها","modules":["m1","m7","m8"]},{"key":"C","text":"اعتبار علمی، خطا و کیفیت داده","modules":["m1","m2","m5"]}]},{"id":10,"text":"بعد از این برنامه دوست داری چه چیزی در پورتفولیویت داشته باشی؟","options":[{"key":"A","text":"یک اثر چندرسانه‌ای حرفه‌ای‌تر","modules":["m3","m4"]},{"key":"B","text":"یک نمونه نرم‌افزاری یا workflow","modules":["m6","m7","m8"]},{"key":"C","text":"یک گزارش، آزمایش یا تحلیل مستند","modules":["m2","m5"]}]}]</script>
+  <div id="static-quiz" data-static-quiz data-modules="[{&#34;id&#34;:&#34;m1&#34;,&#34;title&#34;:&#34;سواد AI و استفاده مسئولانه&#34;,&#34;tagline&#34;:&#34;مدل را بشناس، نه فقط نامش را&#34;,&#34;summary&#34;:&#34;درک عملی مدل‌های مولد، توانایی‌ها، محدودیت‌ها، خطاها و ملاحظات اخلاقی و حریم خصوصی.&#34;,&#34;tools&#34;:[&#34;ChatGPT&#34;,&#34;Gemini&#34;,&#34;مدل‌های open-weight&#34;,&#34;چک‌لیست اعتبارسنجی&#34;]},{&#34;id&#34;:&#34;m2&#34;,&#34;title&#34;:&#34;پرامپت، زمینه و کار پژوهشی&#34;,&#34;tagline&#34;:&#34;از پرسش خام تا گردش‌کار قابل تکرار&#34;,&#34;summary&#34;:&#34;تعریف مسئله، طراحی دستور، افزودن زمینه و استفاده انتقادی از مدل برای مطالعه و پژوهش.&#34;,&#34;tools&#34;:[&#34;دستیارهای زبانی&#34;,&#34;Zotero&#34;,&#34;Semantic Scholar&#34;,&#34;OpenAlex&#34;]},{&#34;id&#34;:&#34;m3&#34;,&#34;title&#34;:&#34;طراحی بصری و تولید تصویر&#34;,&#34;tagline&#34;:&#34;از بریف تا دارایی بصری&#34;,&#34;summary&#34;:&#34;طراحی گرافیک، تولید تصویر با AI و ترکیب خروجی‌ها در یک زبان بصری منسجم.&#34;,&#34;tools&#34;:[&#34;Photopea&#34;,&#34;GIMP&#34;,&#34;Krita&#34;,&#34;Penpot&#34;,&#34;ComfyUI&#34;]},{&#34;id&#34;:&#34;m4&#34;,&#34;title&#34;:&#34;صدا، موسیقی و ویدیو&#34;,&#34;tagline&#34;:&#34;روایت چندرسانه‌ای&#34;,&#34;summary&#34;:&#34;ساخت محتوای صوتی و ویدیویی کوتاه با ترکیب ابزارهای ویرایش سنتی و قابلیت‌های AI.&#34;,&#34;tools&#34;:[&#34;Audacity&#34;,&#34;Shotcut&#34;,&#34;Kdenlive&#34;,&#34;BandLab&#34;,&#34;ابزارهای TTS&#34;]},{&#34;id&#34;:&#34;m5&#34;,&#34;title&#34;:&#34;داده، تحلیل و ارزیابی&#34;,&#34;tagline&#34;:&#34;از داده خام تا نتیجه قابل دفاع&#34;,&#34;summary&#34;:&#34;پاک‌سازی داده، تحلیل توصیفی، انتخاب معیار و مقایسه منصفانه خروجی‌ها.&#34;,&#34;tools&#34;:[&#34;Python&#34;,&#34;pandas&#34;,&#34;scikit-learn&#34;,&#34;Jupyter&#34;,&#34;Promptfoo&#34;]},{&#34;id&#34;:&#34;m6&#34;,&#34;title&#34;:&#34;AI Coding و نمونه‌سازی نرم‌افزار&#34;,&#34;tagline&#34;:&#34;از نیاز تا نمونه قابل اجرا&#34;,&#34;summary&#34;:&#34;استفاده از دستیار کدنویسی برای طراحی، پیاده‌سازی، تست و اصلاح یک ابزار کوچک.&#34;,&#34;tools&#34;:[&#34;VS Code&#34;,&#34;GitHub&#34;,&#34;دستیارهای کدنویسی&#34;,&#34;Excalidraw&#34;]},{&#34;id&#34;:&#34;m7&#34;,&#34;title&#34;:&#34;LLM API و برنامه‌های هوشمند&#34;,&#34;tagline&#34;:&#34;مدل را وارد نرم‌افزار کن&#34;,&#34;summary&#34;:&#34;اتصال برنامه به مدل زبانی از طریق API و ساخت تعامل قابل کنترل با خروجی ساختاریافته.&#34;,&#34;tools&#34;:[&#34;Python&#34;,&#34;JavaScript&#34;,&#34;FastAPI&#34;,&#34;OpenAI-compatible APIs&#34;]},{&#34;id&#34;:&#34;m8&#34;,&#34;title&#34;:&#34;Workflow، Agent، RAG و AI محلی&#34;,&#34;tagline&#34;:&#34;سیستم بساز، نه فقط prompt&#34;,&#34;summary&#34;:&#34;آشنایی با گردش‌کارهای خودکار، ابزارهای Agent، بازیابی اسناد و گزینه‌های اجرای محلی.&#34;,&#34;tools&#34;:[&#34;n8n&#34;,&#34;Ollama&#34;,&#34;llama.cpp&#34;,&#34;Qdrant یا Chroma&#34;]}]">
+    <noscript>
+      <div class="card"><p>برای شرکت در آزمون به جاوااسکریپت نیاز است.</p></div>
+    </noscript>
+    <div class="card skeleton">در حال بارگذاری…</div>
+  </div>
+  <script type="module" src="../static/js/quiz-static.js"></script>
+</div>
+
+</main>
+<footer class="site">
+  <div class="container footer-inner">
+    <div><strong>کارگاه صفر</strong><span>از شناخت تا ساخت · موسسه آموزش عالی زند شیراز</span></div>
+    <div class="row wrap">
+      <a href="../program/index.html">برنامه</a>
+      <a href="../workshop/index.html">راهنمای کارگاه صفر</a>
+      <a href="../modules/index.html">ماژول‌ها</a>
+      <a href="../index.html#proposal">پروپوزال</a>
+      <a href="../tools/index.html">منابع</a>
+      <a href="../faq/index.html">پرسش‌ها</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+
